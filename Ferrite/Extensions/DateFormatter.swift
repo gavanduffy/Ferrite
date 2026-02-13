@@ -15,4 +15,12 @@ extension DateFormatter {
 
         return df
     }()
+
+    static let historyDisplayFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .medium
+        df.timeStyle = .none
+
+        return df
+    }()
 }

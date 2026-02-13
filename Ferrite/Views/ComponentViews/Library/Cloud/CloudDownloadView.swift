@@ -28,9 +28,9 @@ struct CloudDownloadView: View {
                 CloudDownloadRow(
                     cloudDownload: cloudDownload,
                     onSelect: { handleDownloadSelection(cloudDownload) },
-                    onCopy: { _ in UIPasteboard.general.string = cloudDownload.link },
-                    onOpen: { _ in if let url = URL(string: cloudDownload.link) { UIApplication.shared.open(url) } },
-                    onDelete: { _ in pendingDeleteDownload = cloudDownload; showDeleteConfirm = true }
+                    onCopy: { UIPasteboard.general.string = cloudDownload.link },
+                    onOpen: { if let url = URL(string: cloudDownload.link) { UIApplication.shared.open(url) } },
+                    onDelete: { pendingDeleteDownload = cloudDownload; showDeleteConfirm = true }
                 )
                 .disabledAppearance(navModel.currentChoiceSheet != nil,
                                     dimmedOpacity: 0.7,
@@ -241,13 +241,13 @@ private struct CloudDownloadRow: View {
 }
 
  // MARK: - Previews (file scope)
- struct CloudDownloadView_Previews: PreviewProvider {
+ @MainActor struct CloudDownloadView_Previews: PreviewProvider {
      static var previews: some View {
          let debridManager = DebridManager()
          let navModel = NavigationViewModel()
          let logManager = LoggingManager()
 
-         CloudDownloadView(debridSource: RealDebrid(), searchText: .constant(""))
+         return CloudDownloadView(debridSource: RealDebrid() as DebridSource, searchText: .constant(""))
              .environmentObject(debridManager)
              .environmentObject(navModel)
              .environmentObject(logManager)

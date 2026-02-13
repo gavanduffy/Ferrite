@@ -62,21 +62,17 @@ struct HistoryView: View {
 struct HistorySectionView: View {
     let backgroundContext = PersistenceController.shared.backgroundContext
 
-    var formatter: DateFormatter = .init()
     var allEntries: FetchedResults<HistoryEntry>
     var historyGroup: [History]
 
     init(allEntries: FetchedResults<HistoryEntry>, historyGroup: [History]) {
         self.allEntries = allEntries
         self.historyGroup = historyGroup
-
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
     }
 
     var body: some View {
         if compareGroup(historyGroup) > 0 {
-            Section(formatter.string(from: historyGroup[0].date ?? Date())) {
+            Section(DateFormatter.historyDisplayFormatter.string(from: historyGroup[0].date ?? Date())) {
                 ForEach(historyGroup, id: \.self) { history in
                     ForEach(history.entryArray.filter { allEntries.contains($0) }, id: \.self) { entry in
                         HistoryButtonView(entry: entry)

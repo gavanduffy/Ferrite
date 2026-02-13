@@ -506,8 +506,8 @@ class ScrapingViewModel: ObservableObject {
 
         var timeout: Double = 15
 
-        let disableRequestTimeout = UserDefaults.standard.bool(forKey: "Behavior.DisableRequestTimeout")
-        if disableRequestTimeout {
+        let enableRequestTimeout = UserDefaults.standard.object(forKey: "Behavior.EnableRequestTimeout") as? Bool ?? true
+        if !enableRequestTimeout {
             timeout = Double.infinity
         } else {
             let requestTimeoutSecs = UserDefaults.standard.double(forKey: "Behavior.RequestTimeoutSecs")
@@ -1085,8 +1085,9 @@ class ScrapingViewModel: ObservableObject {
 
     private func runRegex(parsedValue: String, regexString: String) -> String? {
         // TODO: Maybe dynamically parse flags
+        let escapedQuery = NSRegularExpression.escapedPattern(for: cleanedSearchText)
         let replacedRegexString = regexString
-            .replacingOccurrences(of: "{query}", with: cleanedSearchText)
+            .replacingOccurrences(of: "{query}", with: escapedQuery)
 
         guard
             let matchedRegex = try? Regex(

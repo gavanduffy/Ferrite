@@ -222,6 +222,6 @@ class LoggingManager: ObservableObject {
                 self.undoAction = nil
                 self.showToast = false
             }
-        }
     }
+}
 }
