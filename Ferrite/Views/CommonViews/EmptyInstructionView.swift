@@ -10,23 +10,35 @@ import SwiftUI
 struct EmptyInstructionView: View {
     let title: String
     let message: String
+    let systemImage: String
+
+    init(title: String, message: String, systemImage: String = "sparkles") {
+        self.title = title
+        self.message = message
+        self.systemImage = systemImage
+    }
 
     var body: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "sparkles")
+        VStack(spacing: DesignTokens.Spacing.medium) {
+            Image(systemName: systemImage)
                 .font(.system(size: 24, weight: .semibold))
+                .accessibilityHidden(true)
 
-            Text(title)
-                .font(.system(size: 22, weight: .semibold))
+            VStack(spacing: DesignTokens.Spacing.tiny) {
+                Text(title)
+                    .font(DesignTokens.Typography.scaled(.title2, weight: .semibold))
 
-            Text(message)
-                .padding(.horizontal, DesignTokens.Spacing.xlarge * 2)
-                .font(.footnote)
+                Text(message)
+                    .font(DesignTokens.Typography.scaled(.caption))
+                    .padding(.horizontal, DesignTokens.Spacing.xlarge * 2)
+            }
         }
         .multilineTextAlignment(.center)
-        .foregroundColor(.init(uiColor: .secondaryLabel))
+        .foregroundColor(.secondary)
         .padding(DesignTokens.Spacing.xlarge)
         .liquidGlass(cornerRadius: DesignTokens.CornerRadius.large, shadow: false)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title). \(message)")
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
     }
