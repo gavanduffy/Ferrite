@@ -22,7 +22,11 @@ struct SettingsPluginListView: View {
     var body: some View {
         ZStack {
             if pluginLists.isEmpty {
-                EmptyInstructionView(title: "No Lists", message: "Add a source list using the + button in the top-right")
+                EmptyInstructionView(
+                    title: "No Lists",
+                    message: "Add a source list using the + button in the top-right",
+                    systemName: "list.bullet.rectangle.portrait"
+                )
             } else {
                 List {
                     ForEach(pluginLists, id: \.self) { pluginList in
@@ -82,6 +86,7 @@ struct SettingsPluginListView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("Add plugin list")
             }
         }
     }
