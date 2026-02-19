@@ -65,12 +65,13 @@ struct ContentView: View {
                     scrapingModel.runningSearchTask == nil,
                     !isEditingSearch
                 {
-                    Text(
-                        pluginManager.filteredInstalledSources.isEmpty ?
-                            "No results found" :
-                            "No results found. Check your source filter and redo your search."
+                    EmptyInstructionView(
+                        systemName: "magnifyingglass",
+                        title: "No Results Found",
+                        message: pluginManager.filteredInstalledSources.isEmpty ?
+                            "No sources are enabled for this search" :
+                            "Check your source filters and try again"
                     )
-                    .padding(.horizontal)
                 }
             }
             .expandedSearchable(

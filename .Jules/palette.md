@@ -1,0 +1,3 @@
+## 2024-06-05 - Contextual Empty States and VoiceOver Consolidation
+**Learning:** Empty states in SwiftUI benefit significantly from VoiceOver grouping using `.accessibilityElement(children: .combine)`. Without this, VoiceOver users have to navigate separately between the icon (if not hidden), title, and message, which breaks the conceptual unity of the "instructional" view. Additionally, using context-specific SF Symbols (e.g., `magnifyingglass` for search, `archivebox` for backups) significantly lowers cognitive load by providing a non-verbal cue for the current screen's context.
+**Action:** Always group title/message pairs in reusable instructional views and provide a `systemName` parameter for icons to ensure visual and semantic context is preserved across the app.

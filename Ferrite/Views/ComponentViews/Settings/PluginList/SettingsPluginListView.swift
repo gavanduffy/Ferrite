@@ -22,7 +22,7 @@ struct SettingsPluginListView: View {
     var body: some View {
         ZStack {
             if pluginLists.isEmpty {
-                EmptyInstructionView(title: "No Lists", message: "Add a source list using the + button in the top-right")
+                EmptyInstructionView(systemName: "list.bullet.rectangle.portrait", title: "No Lists", message: "Add a source list using the + button in the top-right")
             } else {
                 List {
                     ForEach(pluginLists, id: \.self) { pluginList in

@@ -18,7 +18,7 @@ struct BackupsView: View {
     var body: some View {
         ZStack {
             if backupManager.backupUrls.isEmpty {
-                EmptyInstructionView(title: "No Backups", message: "Create one using the + button in the top-right")
+                EmptyInstructionView(systemName: "archivebox", title: "No Backups", message: "Create one using the + button in the top-right")
             } else {
                 List {
                     ForEach(backupManager.backupUrls, id: \.self) { url in
