@@ -44,6 +44,9 @@ struct ContentView: View {
                 if searchText.isEmpty, !lastSearchQuery.isEmpty {
                     Section("Quick actions") {
                         Button("Repeat last search: \(lastSearchQuery)") {
+                            let generator = UIImpactFeedbackGenerator(style: .light)
+                            generator.impactOccurred()
+
                             searchText = lastSearchQuery
                             executeSearch()
                         }
@@ -65,12 +68,13 @@ struct ContentView: View {
                     scrapingModel.runningSearchTask == nil,
                     !isEditingSearch
                 {
-                    Text(
-                        pluginManager.filteredInstalledSources.isEmpty ?
-                            "No results found" :
-                            "No results found. Check your source filter and redo your search."
+                    EmptyInstructionView(
+                        systemName: "magnifyingglass",
+                        title: "No results found",
+                        message: pluginManager.filteredInstalledSources.isEmpty ?
+                            "Make sure you have plugins installed and enabled." :
+                            "Check your source filter and redo your search."
                     )
-                    .padding(.horizontal)
                 }
             }
             .expandedSearchable(
@@ -124,6 +128,9 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if scrapingModel.runningSearchTask != nil {
                         Button("Cancel") {
+                            let generator = UIImpactFeedbackGenerator(style: .light)
+                            generator.impactOccurred()
+
                             scrapingModel.cancelCurrentTask()
                             logManager.hideIndeterminateToast()
                         }
