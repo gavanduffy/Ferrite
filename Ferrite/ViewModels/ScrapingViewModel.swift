@@ -6,6 +6,7 @@
 //
 
 import Base32
+import Foundation
 import Regex
 import SwiftSoup
 import SwiftUI
@@ -1085,8 +1086,9 @@ class ScrapingViewModel: ObservableObject {
 
     private func runRegex(parsedValue: String, regexString: String) -> String? {
         // TODO: Maybe dynamically parse flags
+        let escapedQuery = NSRegularExpression.escapedPattern(for: cleanedSearchText)
         let replacedRegexString = regexString
-            .replacingOccurrences(of: "{query}", with: cleanedSearchText)
+            .replacingOccurrences(of: "{query}", with: escapedQuery)
 
         guard
             let matchedRegex = try? Regex(
