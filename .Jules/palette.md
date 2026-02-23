@@ -1,0 +1,3 @@
+## 2025-01-24 - Contextual Empty States and Accessibility Grouping
+**Learning:** Empty states are often overlooked but provide a great opportunity for visual storytelling and guidance. Using context-specific SF Symbols helps users immediately understand what they are looking at (or why they are looking at nothing). Additionally, grouping title and message in a single accessibility element provides a more coherent experience for VoiceOver users, treating the instruction as a single semantic unit rather than disconnected fragments.
+**Action:** Always use `EmptyInstructionView` for empty states and ensure a relevant `systemName` is provided. Maintain the `.accessibilityElement(children: .combine)` pattern for any similar informational components.
