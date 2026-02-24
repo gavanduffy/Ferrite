@@ -39,23 +39,16 @@ extension View {
         shadow: Bool = true,
         stroke: Bool = true
     ) -> some View {
-        if #available(iOS 26.0, *) {
-            Group {
-                if let tint {
-                    if interactive {
-                        glassEffect(.regular.tint(tint).interactive(), in: .rect(cornerRadius: cornerRadius))
-                    } else {
-                        glassEffect(.regular.tint(tint), in: .rect(cornerRadius: cornerRadius))
+        self
+            .background {
+                ZStack {
+                    Rectangle().fill(.thinMaterial)
+                    if let tint {
+                        tint.opacity(0.05)
                     }
-                } else if interactive {
-                    glassEffect(.regular.interactive(), in: .rect(cornerRadius: cornerRadius))
-                } else {
-                    glassEffect(.regular, in: .rect(cornerRadius: cornerRadius))
                 }
+                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             }
-
-            // (PressableButtonStyle and cardify moved to top-level declarations)
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(Color.primary.opacity(0.06), lineWidth: stroke ? 0.5 : 0)
@@ -72,13 +65,6 @@ extension View {
                 .allowsHitTesting(false)
             )
             .shadow(color: shadow ? Color.black.opacity(0.03) : .clear, radius: shadow ? 6 : 0, x: 0, y: shadow ? 2 : 0)
-        } else {
-            background(.thinMaterial)
-                .cornerRadius(cornerRadius)
-                .overlay(RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.primary.opacity(0.04), lineWidth: stroke ? 0.5 : 0))
-                .shadow(color: shadow ? Color.black.opacity(0.03) : .clear, radius: shadow ? 4 : 0, x: 0, y: shadow ? 1 : 0)
-        }
     }
 
     // MARK: - Semantic Style Wrappers for liquidGlass

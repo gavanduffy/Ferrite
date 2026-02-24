@@ -181,7 +181,7 @@ class TorBox: DebridSource, ObservableObject {
             throw DebridError.EmptyData
         }
 
-        let formData = FormDataBody(params: ["magnet": magnetLink])
+        let formData = try FormDataBody(parameters: ["magnet": magnetLink])
         request.setValue("multipart/form-data; boundary=\(formData.boundary)", forHTTPHeaderField: "Content-Type")
         request.httpBody = formData.body
 
@@ -386,7 +386,7 @@ class TorBox: DebridSource, ObservableObject {
         var request = URLRequest(url: URL(string: "\(baseApiUrl)/webdl/createwebdownload")!)
         request.httpMethod = "POST"
 
-        let formData = FormDataBody(params: ["link": link])
+        let formData = try FormDataBody(parameters: ["link": link])
         request.setValue("multipart/form-data; boundary=\(formData.boundary)", forHTTPHeaderField: "Content-Type")
         request.httpBody = formData.body
 
@@ -460,9 +460,12 @@ class TorBox: DebridSource, ObservableObject {
         var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/createtorrent")!)
         request.httpMethod = "POST"
 
-        let (body, boundary) = try buildTorrentUploadBody(fileUrl: fileUrl)
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        request.httpBody = body
+        let fileName = fileUrl.lastPathComponent
+        let fileData = try Data(contentsOf: fileUrl)
+        let formData = try FormDataBody(parameters: [:], fileData: fileData, fileName: fileName, fileKey: "file")
+
+        request.setValue("multipart/form-data; boundary=\(formData.boundary)", forHTTPHeaderField: "Content-Type")
+        request.httpBody = formData.body
 
         let data = try await performRequest(request: &request, requestName: #function)
         let rawResponse = try jsonDecoder.decode(TBResponse<CreateTorrentResponse>.self, from: data)
@@ -472,21 +475,5 @@ class TorBox: DebridSource, ObservableObject {
         }
 
         return torrentId
-    }
-
-    private func buildTorrentUploadBody(fileUrl: URL) throws -> (Data, String) {
-        let boundary = UUID().uuidString
-        let fileName = fileUrl.lastPathComponent
-        let fileData = try Data(contentsOf: fileUrl)
-
-        var body = Data()
-        body.append("--\(boundary)\r\n".data(using: .utf8)!)
-        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
-        body.append("Content-Type: application/x-bittorrent\r\n\r\n".data(using: .utf8)!)
-        body.append(fileData)
-        body.append("\r\n".data(using: .utf8)!)
-        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
-
-        return (body, boundary)
     }
 }
