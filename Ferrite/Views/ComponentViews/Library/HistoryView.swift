@@ -32,6 +32,15 @@ struct HistoryView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .overlay {
+            if !searchText.isEmpty && history.isEmpty {
+                EmptyInstructionView(
+                    systemName: "magnifyingglass",
+                    title: "No results found",
+                    message: "Try a different search term"
+                )
+            }
+        }
         .onAppear {
             applyPredicate()
         }

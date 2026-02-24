@@ -53,6 +53,15 @@ struct DebridCloudView: View {
                 pastCloudView
             }
         }
+        .overlay {
+            if !searchText.isEmpty && isCloudEmpty {
+                EmptyInstructionView(
+                    systemName: "magnifyingglass",
+                    title: "No items found",
+                    message: "Try a different search term"
+                )
+            }
+        }
         .task {
             await debridManager.fetchDebridCloud()
         }
@@ -133,6 +142,18 @@ struct DebridCloudView: View {
         .listStyle(.plain)
     }
     
+    private var isCloudEmpty: Bool {
+        if selectedSegment == .current {
+            return debridSource.cloudDownloads.filter {
+                searchText.isEmpty ? true : $0.fileName.lowercased().contains(searchText.lowercased())
+            }.isEmpty && debridSource.cloudMagnets.filter {
+                searchText.isEmpty ? true : $0.fileName.lowercased().contains(searchText.lowercased())
+            }.isEmpty
+        } else {
+            return cachedFilteredHistory.isEmpty
+        }
+    }
+
     private func updateFilteredHistory() {
         let currentKeys = debridManager.getCurrentCloudHistoryKeys(for: debridSource.id)
         

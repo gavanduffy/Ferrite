@@ -1,0 +1,4 @@
+## 2025-01-24 - Standardizing Empty States with Accessible Grouping
+**Learning:** Empty states in SwiftUI benefit significantly from a unified component that handles decorative iconography (SF Symbols) and hierarchical text. By using `.accessibilityElement(children: .combine)` on the text container while applying `.accessibilityHidden(true)` to the icon, we provide a clean VoiceOver experience that reads the "what" and "how" of the empty state in a single focused unit without decorative clutter.
+
+**Action:** Always use `EmptyInstructionView` for empty lists or search results. Ensure `systemName` matches the context (e.g., `magnifyingglass` for search, `clock.arrow.circlepath` for history) to maintain visual semantic consistency. Reference `DesignTokens.Typography.scaled` to ensure Dynamic Type compliance across all empty states.
