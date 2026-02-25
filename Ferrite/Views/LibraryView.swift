@@ -41,16 +41,22 @@ struct LibraryView: View {
                 }
             }
             .overlay {
-                if !isSearching {
-                    switch navModel.libraryPickerSelection {
-                    case .history:
-                        if allHistoryEntries.isEmpty {
-                            EmptyInstructionView(title: "No History", message: "Start watching to build history")
-                        }
-                    case .debridCloud:
-                        if debridManager.selectedDebridSource == nil {
-                            EmptyInstructionView(title: "Cloud Unavailable", message: "Listing is not available for this service")
-                        }
+                switch navModel.libraryPickerSelection {
+                case .history:
+                    if allHistoryEntries.isEmpty {
+                        EmptyInstructionView(
+                            title: isSearching ? "No Results" : "No History",
+                            message: isSearching ? "Try a different search term" : "Start watching to build history",
+                            systemName: isSearching ? "magnifyingglass" : "clock.arrow.circlepath"
+                        )
+                    }
+                case .debridCloud:
+                    if debridManager.selectedDebridSource == nil {
+                        EmptyInstructionView(
+                            title: "Cloud Unavailable",
+                            message: "Listing is not available for this service",
+                            systemName: "icloud.slash"
+                        )
                     }
                 }
             }
