@@ -16,3 +16,16 @@
 
 ## Open Items
 - UI screenshots still needed once a runnable iOS environment is available.
+
+## Build Health Scan (Sentinel) - 2025-05-22
+### Identified Issues
+- **Dangling Reference:** `SelectedDebridFilterView.swift` was referenced in `project.pbxproj` but missing from the filesystem.
+- **Invalid Package Version:** `swiftui-introspect` was set to `26.0.0` (invalid placeholder/future version).
+- **Incorrect Swift Version:** `SWIFT_VERSION` was set to `5.0` instead of `5.8`.
+- **Invalid API Usage:** `glassEffect` and `#available(iOS 26.0, *)` guards were used in `Ferrite/Extensions/View.swift`, which are non-existent in the target environment.
+
+### Fixes Applied
+- Removed all references to `SelectedDebridFilterView.swift` from `Ferrite.xcodeproj/project.pbxproj`.
+- Updated `swiftui-introspect` requirement to `1.2.1` in `Ferrite.xcodeproj/project.pbxproj`.
+- Updated `SWIFT_VERSION` to `5.8` across all build configurations in `project.pbxproj`.
+- Refactored `liquidGlass` in `Ferrite/Extensions/View.swift` to use native `.thinMaterial` and remove invalid availability guards/API calls.

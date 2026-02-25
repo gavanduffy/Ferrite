@@ -98,7 +98,6 @@
 		0C84F4852895BFED0074B7C9 /* SourceHtmlParser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84F47D2895BFED0074B7C9 /* SourceHtmlParser+CoreDataProperties.swift */; };
 		0C84FCE129E4B41D00B0DFE4 /* SourceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84FCE029E4B41D00B0DFE4 /* SourceFilterView.swift */; };
 		0C84FCE329E4B42600B0DFE4 /* IAFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84FCE229E4B42600B0DFE4 /* IAFilterView.swift */; };
-		0C84FCE529E4B43200B0DFE4 /* SelectedDebridFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84FCE429E4B43200B0DFE4 /* SelectedDebridFilterView.swift */; };
 		0C84FCE729E4B61A00B0DFE4 /* FilterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84FCE629E4B61A00B0DFE4 /* FilterModels.swift */; };
 		0C84FCE929E5ADEF00B0DFE4 /* FilterAmountLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84FCE829E5ADEF00B0DFE4 /* FilterAmountLabelView.swift */; };
 		0C871BDF29994D9D005279AC /* FilterLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C871BDE29994D9D005279AC /* FilterLabelView.swift */; };
@@ -256,7 +255,6 @@
 		0C84F47D2895BFED0074B7C9 /* SourceHtmlParser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SourceHtmlParser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C84FCE029E4B41D00B0DFE4 /* SourceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceFilterView.swift; sourceTree = "<group>"; };
 		0C84FCE229E4B42600B0DFE4 /* IAFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAFilterView.swift; sourceTree = "<group>"; };
-		0C84FCE429E4B43200B0DFE4 /* SelectedDebridFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDebridFilterView.swift; sourceTree = "<group>"; };
 		0C84FCE629E4B61A00B0DFE4 /* FilterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModels.swift; sourceTree = "<group>"; };
 		0C84FCE829E5ADEF00B0DFE4 /* FilterAmountLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAmountLabelView.swift; sourceTree = "<group>"; };
 		0C871BDE29994D9D005279AC /* FilterLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLabelView.swift; sourceTree = "<group>"; };
@@ -544,7 +542,6 @@
 			children = (
 				0C84FCE029E4B41D00B0DFE4 /* SourceFilterView.swift */,
 				0C84FCE229E4B42600B0DFE4 /* IAFilterView.swift */,
-				0C84FCE429E4B43200B0DFE4 /* SelectedDebridFilterView.swift */,
 				0C871BDE29994D9D005279AC /* FilterLabelView.swift */,
 				0C84FCE829E5ADEF00B0DFE4 /* FilterAmountLabelView.swift */,
 				0C2B028E29E9E61E00DCF127 /* SortFilterView.swift */,
@@ -903,7 +900,6 @@
 				0C44E2A828D4DDDC007711AE /* Application.swift in Sources */,
 				0CC389542970AD900066D06F /* Action+CoreDataProperties.swift in Sources */,
 				0C7ED14128D61BBA009E29AD /* BackupModels.swift in Sources */,
-				0C84FCE529E4B43200B0DFE4 /* SelectedDebridFilterView.swift in Sources */,
 				0CA148EC288903F000DE2211 /* ContentView.swift in Sources */,
 				0CC389532970AD900066D06F /* Action+CoreDataClass.swift in Sources */,
 				0CB725342C123E760047FC0B /* CloudMagnetView.swift in Sources */,
@@ -1159,7 +1155,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = minimal;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.8;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1195,7 +1191,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = minimal;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.8;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1229,7 +1225,7 @@
 			repositoryURL = "https://github.com/siteline/swiftui-introspect";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 26.0.0;
+				minimumVersion = 1.2.1;
 			};
 		};
 		0C4CFC442897030D00AD9FAD /* XCRemoteSwiftPackageReference "Regex" */ = {
