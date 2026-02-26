@@ -45,11 +45,11 @@ struct LibraryView: View {
                     switch navModel.libraryPickerSelection {
                     case .history:
                         if allHistoryEntries.isEmpty {
-                            EmptyInstructionView(title: "No History", message: "Start watching to build history")
+                            EmptyInstructionView(systemName: "clock.arrow.circlepath", title: "No History", message: "Start watching to build history")
                         }
                     case .debridCloud:
                         if debridManager.selectedDebridSource == nil {
-                            EmptyInstructionView(title: "Cloud Unavailable", message: "Listing is not available for this service")
+                            EmptyInstructionView(systemName: "icloud.slash", title: "Cloud Unavailable", message: "Listing is not available for this service")
                         }
                     }
                 }
