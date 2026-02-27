@@ -29,7 +29,11 @@ struct DebridServiceToggle: View {
     }
 
     var body: some View {
-        Button(action: cycleToNextService) {
+        Button(action: {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            cycleToNextService()
+        }) {
             HStack(spacing: 4) {
                 Text(currentServiceDisplay)
                     .font(.caption.weight(.medium))

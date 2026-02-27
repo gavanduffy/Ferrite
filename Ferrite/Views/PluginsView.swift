@@ -52,11 +52,19 @@ struct PluginsView: View {
                         switch navModel.pluginPickerSelection {
                         case .sources:
                             if installedSources.isEmpty, pluginManager.availableSources.isEmpty {
-                                EmptyInstructionView(title: "No Sources", message: "Add a plugin list in Settings")
+                                EmptyInstructionView(
+                                    title: "No Sources",
+                                    message: "Add a plugin list in Settings",
+                                    systemName: "list.bullet.rectangle.portrait"
+                                )
                             }
                         case .actions:
                             if installedActions.isEmpty, pluginManager.availableActions.isEmpty {
-                                EmptyInstructionView(title: "No Actions", message: "Add a plugin list in Settings")
+                                EmptyInstructionView(
+                                    title: "No Actions",
+                                    message: "Add a plugin list in Settings",
+                                    systemName: "list.bullet.rectangle.portrait"
+                                )
                             }
                         }
                     } else {

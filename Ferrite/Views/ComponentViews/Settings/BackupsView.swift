@@ -18,7 +18,11 @@ struct BackupsView: View {
     var body: some View {
         ZStack {
             if backupManager.backupUrls.isEmpty {
-                EmptyInstructionView(title: "No Backups", message: "Create one using the + button in the top-right")
+                EmptyInstructionView(
+                    title: "No Backups",
+                    message: "Create one using the + button in the top-right",
+                    systemName: "archivebox"
+                )
             } else {
                 List {
                     ForEach(backupManager.backupUrls, id: \.self) { url in
@@ -57,12 +61,16 @@ struct BackupsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
+                    let generator = UIImpactFeedbackGenerator(style: .medium)
+                    generator.impactOccurred()
+
                     Task {
                         await backupManager.createBackup()
                     }
                 } label: {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("Create backup")
             }
         }
     }

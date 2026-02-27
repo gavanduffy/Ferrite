@@ -14,6 +14,9 @@ struct HistoryActionsView: View {
 
     var body: some View {
         Button("Clear") {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+
             showActionSheet.toggle()
         }
         .tint(.red)
