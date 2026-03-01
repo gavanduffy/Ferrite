@@ -65,12 +65,13 @@ struct ContentView: View {
                     scrapingModel.runningSearchTask == nil,
                     !isEditingSearch
                 {
-                    Text(
-                        pluginManager.filteredInstalledSources.isEmpty ?
-                            "No results found" :
-                            "No results found. Check your source filter and redo your search."
+                    EmptyInstructionView(
+                        title: "No results found",
+                        message: pluginManager.filteredInstalledSources.isEmpty ?
+                            "Check your source filter and redo your search." :
+                            "Try a different search query.",
+                        systemName: "magnifyingglass"
                     )
-                    .padding(.horizontal)
                 }
             }
             .expandedSearchable(
@@ -150,6 +151,11 @@ struct ContentView: View {
 
             logManager.hideIndeterminateToast()
             scrapingModel.runningSearchTask = nil
+
+            if scrapingModel.searchResults.isEmpty {
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+            }
         }
     }
 }
