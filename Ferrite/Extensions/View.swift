@@ -35,50 +35,34 @@ extension View {
     func liquidGlass(
         cornerRadius: CGFloat = 16,
         tint: Color? = nil,
-        interactive: Bool = false,
         shadow: Bool = true,
         stroke: Bool = true
     ) -> some View {
-        if #available(iOS 26.0, *) {
-            Group {
+        background(
+            ZStack {
+                Rectangle().fill(.thinMaterial)
                 if let tint {
-                    if interactive {
-                        glassEffect(.regular.tint(tint).interactive(), in: .rect(cornerRadius: cornerRadius))
-                    } else {
-                        glassEffect(.regular.tint(tint), in: .rect(cornerRadius: cornerRadius))
-                    }
-                } else if interactive {
-                    glassEffect(.regular.interactive(), in: .rect(cornerRadius: cornerRadius))
-                } else {
-                    glassEffect(.regular, in: .rect(cornerRadius: cornerRadius))
+                    tint.opacity(0.05)
                 }
             }
-
-            // (PressableButtonStyle and cardify moved to top-level declarations)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+        .overlay(
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(Color.primary.opacity(0.06), lineWidth: stroke ? 0.5 : 0)
+                .blendMode(.overlay)
+        )
+        .overlay(
+            // subtle top-left highlight to imply depth
+            LinearGradient(
+                gradient: Gradient(colors: [Color.white.opacity(0.06), Color.white.opacity(0.01)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-            .overlay(
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.primary.opacity(0.06), lineWidth: stroke ? 0.5 : 0)
-                    .blendMode(.overlay)
-            )
-            .overlay(
-                // subtle top-left highlight to imply depth
-                LinearGradient(
-                    gradient: Gradient(colors: [Color.white.opacity(0.06), Color.white.opacity(0.01)]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-                .allowsHitTesting(false)
-            )
-            .shadow(color: shadow ? Color.black.opacity(0.03) : .clear, radius: shadow ? 6 : 0, x: 0, y: shadow ? 2 : 0)
-        } else {
-            background(.thinMaterial)
-                .cornerRadius(cornerRadius)
-                .overlay(RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.primary.opacity(0.04), lineWidth: stroke ? 0.5 : 0))
-                .shadow(color: shadow ? Color.black.opacity(0.03) : .clear, radius: shadow ? 4 : 0, x: 0, y: shadow ? 1 : 0)
-        }
+            .allowsHitTesting(false)
+        )
+        .shadow(color: shadow ? Color.black.opacity(0.03) : .clear, radius: shadow ? 6 : 0, x: 0, y: shadow ? 2 : 0)
     }
 
     // MARK: - Semantic Style Wrappers for liquidGlass
@@ -86,21 +70,19 @@ extension View {
     /// Card-style liquid glass with medium corner radius
     func liquidGlassCard(
         tint: Color? = nil,
-        interactive: Bool = false,
         shadow: Bool = true,
         stroke: Bool = true
     ) -> some View {
-        liquidGlass(cornerRadius: 12, tint: tint, interactive: interactive, shadow: shadow, stroke: stroke)
+        liquidGlass(cornerRadius: 12, tint: tint, shadow: shadow, stroke: stroke)
     }
 
     /// Pill-style liquid glass with fully rounded corners
     func liquidGlassPill(
         tint: Color? = nil,
-        interactive: Bool = false,
         shadow: Bool = true,
         stroke: Bool = true
     ) -> some View {
-        liquidGlass(cornerRadius: 999, tint: tint, interactive: interactive, shadow: shadow, stroke: stroke)
+        liquidGlass(cornerRadius: 999, tint: tint, shadow: shadow, stroke: stroke)
     }
 
     /// Toast-style liquid glass with small corner radius
@@ -108,11 +90,10 @@ extension View {
     /// suitable for temporary notification overlays
     func liquidGlassToast(
         tint: Color? = nil,
-        interactive: Bool = false,
         shadow: Bool = true,
         stroke: Bool = true
     ) -> some View {
-        liquidGlass(cornerRadius: 10, tint: tint, interactive: interactive, shadow: shadow, stroke: stroke)
+        liquidGlass(cornerRadius: 10, tint: tint, shadow: shadow, stroke: stroke)
     }
 }
 
