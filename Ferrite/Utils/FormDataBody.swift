@@ -15,12 +15,12 @@ struct FormDataBody {
         var body = Data()
 
         for (key, value) in params {
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
-            body.append("\(value)\r\n".data(using: .utf8)!)
+            body.append("--\(boundary)\r\n".data(using: .utf8) ?? Data())
+            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8) ?? Data())
+            body.append("\(value)\r\n".data(using: .utf8) ?? Data())
         }
 
-        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        body.append("--\(boundary)--\r\n".data(using: .utf8) ?? Data())
 
         self.body = body
     }
