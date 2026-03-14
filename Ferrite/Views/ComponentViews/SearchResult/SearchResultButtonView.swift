@@ -22,6 +22,9 @@ struct SearchResultButtonView: View {
 
     var body: some View {
         Button {
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
+
             if debridManager.currentDebridTask == nil {
                 navModel.selectedMagnet = result.magnet
                 navModel.selectedTitle = result.title ?? ""
@@ -82,6 +85,8 @@ struct SearchResultButtonView: View {
         }
         .disableInteraction(navModel.currentChoiceSheet != nil)
         .tint(.primary)
+        .applyPressableButtonStyle()
+        .accessibilityHint("Opens download and debrid options for this result")
         .contextMenu {
             ZStack {
                 if let bookmark = existingBookmark {
