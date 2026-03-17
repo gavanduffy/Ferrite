@@ -11,7 +11,12 @@ import SwiftUI
 @MainActor
 class DebridManager: ObservableObject {
     // Linked classes
-    var logManager: LoggingManager?
+    var logManager: LoggingManager? {
+        didSet {
+            syncLogManager()
+        }
+    }
+
     @Published var realDebrid: RealDebrid = .init()
     @Published var torbox: TorBox = .init()
     @Published var allDebrid: AllDebrid = .init()
@@ -65,6 +70,8 @@ class DebridManager: ObservableObject {
     @Published var notImplementedMessage: String = ""
 
     init() {
+        syncLogManager()
+
         // Update the UI for debrid services that are enabled
         enabledDebrids = debridSources.filter(\.isLoggedIn)
         
@@ -732,5 +739,13 @@ class DebridManager: ObservableObject {
         
         // Update cloudHistory with merged results
         cloudHistory = Array(historyDict.values).sorted { $0.dateAdded > $1.dateAdded }
+    }
+
+    private func syncLogManager() {
+        realDebrid.logManager = logManager
+        torbox.logManager = logManager
+        allDebrid.logManager = logManager
+        premiumize.logManager = logManager
+        offcloud.logManager = logManager
     }
 }

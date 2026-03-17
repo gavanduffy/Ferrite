@@ -8,6 +8,7 @@
 import Foundation
 
 class AllDebrid: PollingDebridSource, ObservableObject {
+    var logManager: LoggingManager?
     let id = "AllDebrid"
     let abbreviation = "AD"
     let website = "https://alldebrid.com"
@@ -75,7 +76,7 @@ class AllDebrid: PollingDebridSource, ObservableObject {
 
             return userUrl
         } catch {
-            print("Couldn't get pin information!")
+            await logManager?.error("AllDebrid: Couldn't get pin information: \(error.localizedDescription)", showToast: false)
             throw DebridError.AuthQuery(description: error.localizedDescription)
         }
     }

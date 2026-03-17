@@ -8,6 +8,7 @@
 import Foundation
 
 class OffCloud: DebridSource, ObservableObject {
+    var logManager: LoggingManager?
     let id = "OffCloud"
     let abbreviation = "OC"
     let website = "https://offcloud.com"
@@ -70,9 +71,9 @@ class OffCloud: DebridSource, ObservableObject {
         if response.statusCode >= 200, response.statusCode <= 299 {
             return data
         } else if response.statusCode == 401 {
-            throw DebridError.FailedRequest(description: "The request \(requestName) failed because you were unauthorized. Please relogin to TorBox in Settings.")
+            throw DebridError.FailedRequest(description: "The request \(requestName) failed because you were unauthorized. Please relogin to OffCloud in Settings.")
         } else {
-            print(response)
+            await logManager?.error("OffCloud: \(requestName) failed with status code \(response.statusCode)", showToast: false)
             throw DebridError.FailedRequest(description: "The request \(requestName) failed with status code \(response.statusCode).")
         }
     }
