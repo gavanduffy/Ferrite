@@ -66,7 +66,11 @@ class Kodi {
     }
 
     func ping(server: KodiServer) async throws {
-        var request = URLRequest(url: URL(string: "\(server.urlString)/jsonrpc")!)
+        guard let url = URL(string: "\(server.urlString)/jsonrpc") else {
+            throw KodiError.InvalidBaseUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -95,16 +99,20 @@ class Kodi {
     }
 
     func sendVideoUrl(urlString: String, server: KodiServer) async throws {
-        if URL(string: urlString) == nil {
+        guard let playbackUrl = URL(string: urlString) else {
             throw KodiError.InvalidPlaybackUrl
         }
 
         let requestBody = RPCPayload(
             method: "Player.Open",
-            params: Params(item: Item(file: urlString))
+            params: Params(item: Item(file: playbackUrl.absoluteString))
         )
 
-        var request = URLRequest(url: URL(string: "\(server.urlString)/jsonrpc")!)
+        guard let url = URL(string: "\(server.urlString)/jsonrpc") else {
+            throw KodiError.InvalidBaseUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
