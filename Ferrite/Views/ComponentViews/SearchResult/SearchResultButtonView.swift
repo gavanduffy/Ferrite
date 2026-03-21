@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SearchResultButtonView: View {
     let backgroundContext = PersistenceController.shared.backgroundContext
@@ -22,6 +23,9 @@ struct SearchResultButtonView: View {
 
     var body: some View {
         Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+
             if debridManager.currentDebridTask == nil {
                 navModel.selectedMagnet = result.magnet
                 navModel.selectedTitle = result.title ?? ""
@@ -80,6 +84,9 @@ struct SearchResultButtonView: View {
             .listRowBackground(Color.clear)
             .disabledAppearance(navModel.currentChoiceSheet != nil, dimmedOpacity: 0.7, animation: .easeOut(duration: 0.2))
         }
+        .applyPressableButtonStyle()
+        .accessibilityLabel("\(result.title ?? "No title")\(cacheBadgeText().map { ", \($0)" } ?? "")")
+        .accessibilityHint("Opens download and debrid options")
         .disableInteraction(navModel.currentChoiceSheet != nil)
         .tint(.primary)
         .contextMenu {
