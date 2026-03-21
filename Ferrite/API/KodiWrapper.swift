@@ -66,7 +66,11 @@ class Kodi {
     }
 
     func ping(server: KodiServer) async throws {
-        var request = URLRequest(url: URL(string: "\(server.urlString)/jsonrpc")!)
+        guard let url = URL(string: "\(server.urlString)/jsonrpc") else {
+            throw KodiError.InvalidBaseUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -76,7 +80,10 @@ class Kodi {
         )
 
         if let username = server.username, let password = server.password {
-            request.setValue("Basic \(Data("\(username):\(password)".utf8).base64EncodedString())", forHTTPHeaderField: "Authorization")
+            guard let authData = "\(username):\(password)".data(using: .utf8) else {
+                throw KodiError.InvalidPostBody
+            }
+            request.setValue("Basic \(authData.base64EncodedString())", forHTTPHeaderField: "Authorization")
         }
 
         request.httpBody = try encoder.encode(requestBody)
@@ -104,12 +111,19 @@ class Kodi {
             params: Params(item: Item(file: urlString))
         )
 
-        var request = URLRequest(url: URL(string: "\(server.urlString)/jsonrpc")!)
+        guard let url = URL(string: "\(server.urlString)/jsonrpc") else {
+            throw KodiError.InvalidBaseUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         if let username = server.username, let password = server.password {
-            request.setValue("Basic \(Data("\(username):\(password)".utf8).base64EncodedString())", forHTTPHeaderField: "Authorization")
+            guard let authData = "\(username):\(password)".data(using: .utf8) else {
+                throw KodiError.InvalidPostBody
+            }
+            request.setValue("Basic \(authData.base64EncodedString())", forHTTPHeaderField: "Authorization")
         }
 
         request.httpBody = try encoder.encode(requestBody)
