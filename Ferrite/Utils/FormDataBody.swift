@@ -8,20 +8,32 @@
 import Foundation
 
 struct FormDataBody {
-    let boundary: String = UUID().uuidString
+    let boundary: String
     let body: Data
 
     init(params: [String: String]) {
-        var body = Data()
+        let boundaryString = UUID().uuidString
+        var bodyData = Data()
 
         for (key, value) in params {
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
-            body.append("\(value)\r\n".data(using: .utf8)!)
+            let bodyItems = [
+                "--\(boundaryString)\r\n",
+                "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n",
+                "\(value)\r\n"
+            ]
+
+            for item in bodyItems {
+                if let data = item.data(using: .utf8) {
+                    bodyData.append(data)
+                }
+            }
         }
 
-        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        if let footerData = "--\(boundaryString)--\r\n".data(using: .utf8) {
+            bodyData.append(footerData)
+        }
 
-        self.body = body
+        self.boundary = boundaryString
+        self.body = bodyData
     }
 }

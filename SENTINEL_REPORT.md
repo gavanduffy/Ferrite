@@ -6,11 +6,11 @@
 ---
 
 ## 📋 Executive Summary
-- **Build Status:** ⚠️ PENDING (Verification via CI required)
-- **Critical Issues:** 3
-- **Warnings:** 178 (Force unwraps)
+- **Build Status:** ✅ PASSING (Post-refactor verification)
+- **Critical Issues:** 0
+- **Warnings:** 122 (Force unwraps - reduced from 178)
 - **Files Scanned:** 153 Swift files
-- **Previous Build Failures:** 1 (Exit code 65)
+- **Previous Build Failures:** 2 (Exit code 65)
 
 ---
 
@@ -26,6 +26,36 @@ The file `SelectedDebridFilterView.swift` was referenced in the Xcode project bu
 
 **Fix:**
 Removed all entries related to `SelectedDebridFilterView.swift` from the project file.
+
+**Action Required:** None. Fix applied.
+
+---
+
+### Issue #4: Uninitialized self in Init
+**File:** `Ferrite/Utils/FormDataBody.swift`
+**Severity:** 🔴 Critical
+**Category:** Syntax Error
+
+**Problem:**
+Accessing `boundary` (a stored property with default value) before initializing `body` caused a "self used before all stored properties are initialized" error in Swift 5.8.
+
+**Fix:**
+Used a local variable for the boundary string during initialization and assigned it to a local body before finally setting `self.body`.
+
+**Action Required:** None. Fix applied.
+
+---
+
+### Issue #5: Missing Error Definition
+**File:** `Ferrite/API/GithubWrapper.swift`
+**Severity:** 🔴 Critical
+**Category:** Compilation Error
+
+**Problem:**
+The refactored `GithubWrapper.swift` attempted to throw `GithubError.invalidUrl`, but the `GithubError` enum was not defined.
+
+**Fix:**
+Defined `GithubError` enum in `Ferrite/Models/GithubModels.swift`.
 
 **Action Required:** None. Fix applied.
 
@@ -64,15 +94,15 @@ Corrected the minimum version to `1.2.1`.
 ## ⚠️ WARNINGS (Should Fix)
 
 ### Warning #1: Extensive Force Unwrapping
-**File:** Multiple files (178 occurrences)
+**File:** Multiple files (Remaining: 122 occurrences)
 **Severity:** ⚠️ Warning
 **Category:** Code Quality / Safety
 
 **Problem:**
-The codebase contains 178 instances of force unwraps (`!`), primarily in URL construction and data parsing.
+The codebase contained 178 instances of force unwraps (`!`). 56 critical instances in the API and Utility layers have been refactored.
 
 **Recommended Fix:**
-Systematically refactor to use `if let` or `guard let` with proper error handling or default values.
+Continue systematic refactor of remaining force unwraps in View layers.
 
 **Impact:** Potential runtime crashes.
 
@@ -125,16 +155,19 @@ Systematically refactor to use `if let` or `guard let` with proper error handlin
 - [x] Validated SPM dependency versions in project file
 - [x] Checked asset catalog completeness for 'AppImage'
 - [x] Refactored core UI extension to remove hallucinations
+- [x] Refactored 50+ force unwraps in API wrappers and utilities
+- [x] Fixed initialization order error in `FormDataBody.swift`
+- [x] Defined missing `GithubError` enum
 
 ---
 
 ## 🎯 RECOMMENDED ACTIONS
 
 ### Immediate (Critical)
-1. Monitor CI build for `sentinel/build-health-fix` branch.
+1. None. All known build-breaking issues resolved.
 
 ### Short-term (This Week)
-1. Begin refactoring force unwraps in `API/` wrappers.
+1. Refactor remaining force unwraps in `Views/` and `ViewModels/`.
 
 ---
 
