@@ -220,7 +220,11 @@ class OffCloud: DebridSource, ObservableObject {
     }
 
     private func cloudExplore(requestId: String) async throws -> CloudExploreResponse {
-        var request = try URLRequest(url: buildRequestURL(urlString: "\(baseApiUrl)/cloud/explore/\(requestId)"))
+        guard let url = try? buildRequestURL(urlString: "\(baseApiUrl)/cloud/explore/\(requestId)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: url)
 
         let data = try await performRequest(request: &request, requestName: "cloudExplore")
         let rawResponse = try jsonDecoder.decode(CloudExploreResponse.self, from: data)
@@ -271,7 +275,11 @@ class OffCloud: DebridSource, ObservableObject {
             throw DebridError.InvalidPostBody
         }
 
-        var request = try URLRequest(url: buildRequestURL(urlString: "\(website)/cloud/remove/\(cloudMagnetId)"))
+        guard let url = try? buildRequestURL(urlString: "\(website)/cloud/remove/\(cloudMagnetId)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: url)
         try await performRequest(request: &request, requestName: "cloudRemove")
     }
 }
