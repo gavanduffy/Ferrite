@@ -88,7 +88,7 @@ class AllDebrid: PollingDebridSource, ObservableObject {
             URLQueryItem(name: "pin", value: pin)
         ]
 
-        let request = try URLRequest(url: buildRequestURL(urlString: "\(baseApiUrl)/pin/check", queryItems: queryItems))
+        let request = URLRequest(url: try buildRequestURL(urlString: "\(baseApiUrl)/pin/check", queryItems: queryItems))
 
         // Timer to poll AD API for key
         authTask = Task {
