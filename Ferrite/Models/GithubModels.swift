@@ -17,4 +17,10 @@ extension Github {
             case tagName = "tag_name"
         }
     }
+
+    enum GithubError: Error {
+        case invalidUrl
+        case decodeError
+        case networkError
+    }
 }
