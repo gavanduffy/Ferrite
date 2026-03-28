@@ -14,16 +14,38 @@ struct ListRowLinkView: View {
     let link: String
 
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        Group {
+            if let url = URL(string: link) {
+                Link(destination: url) {
+                    HStack {
+                        Text(text)
+                            .foregroundColor(.primary)
 
-            Spacer()
+                        Spacer()
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+                        Image(systemName: "arrow.up.forward.app.fill")
+                            .foregroundColor(.gray)
+                            .accessibilityHidden(true)
+                    }
+                    .contentShape(Rectangle())
+                }
+                .accessibilityLabel(text)
+                .accessibilityHint("Opens link in browser")
+            } else {
+                HStack {
+                    Text(text)
+                        .foregroundColor(.secondary)
+
+                    Spacer()
+
+                    Image(systemName: "link.badge.plus")
+                        .foregroundColor(.secondary)
+                        .accessibilityHidden(true)
+                }
+                .accessibilityLabel("\(text), link unavailable")
+            }
         }
-        .padding(.trailing, -5)
+        .padding(.trailing, -DesignTokens.Spacing.tiny - 1)
     }
 }
 
@@ -39,19 +61,26 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            action()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                        .accessibilityHidden(true)
+                }
             }
+            .contentShape(Rectangle())
         }
-        .padding(.trailing, -5)
+        .buttonStyle(.plain)
+        .padding(.trailing, -DesignTokens.Spacing.tiny - 1)
+        .accessibilityLabel(text)
     }
 }
 

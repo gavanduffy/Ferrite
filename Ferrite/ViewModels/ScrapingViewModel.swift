@@ -506,8 +506,9 @@ class ScrapingViewModel: ObservableObject {
 
         var timeout: Double = 15
 
-        let disableRequestTimeout = UserDefaults.standard.bool(forKey: "Behavior.DisableRequestTimeout")
-        if disableRequestTimeout {
+        // Defaults to true (enabled) if the key is not set
+        let enableRequestTimeout = UserDefaults.standard.object(forKey: "Behavior.EnableRequestTimeout") as? Bool ?? true
+        if !enableRequestTimeout {
             timeout = Double.infinity
         } else {
             let requestTimeoutSecs = UserDefaults.standard.double(forKey: "Behavior.RequestTimeoutSecs")

@@ -35,6 +35,8 @@
 		0C31133D28B1ABFA004DCB0D /* SourceJsonParser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31133B28B1ABFA004DCB0D /* SourceJsonParser+CoreDataProperties.swift */; };
 		0C32FB532890D19D002BD219 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32FB522890D19D002BD219 /* AboutView.swift */; };
 		0C32FB572890D1F2002BD219 /* ListRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32FB562890D1F2002BD219 /* ListRowViews.swift */; };
+		0CAD77032E3D600000A1B2C6 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD77002E3D600000A1B2C3 /* DesignTokens.swift */; };
+		0CAD77042E3D600000A1B2C7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD77012E3D600000A1B2C4 /* Keyboard.swift */; };
 		0C3DD43F29B6968D006429DB /* KodiEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DD43E29B6968D006429DB /* KodiEditorView.swift */; };
 		0C3DD44229B6ACD9006429DB /* KodiServer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DD44029B6ACD9006429DB /* KodiServer+CoreDataClass.swift */; };
 		0C3DD44329B6ACD9006429DB /* KodiServer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DD44129B6ACD9006429DB /* KodiServer+CoreDataProperties.swift */; };
@@ -196,6 +198,8 @@
 		0C31133B28B1ABFA004DCB0D /* SourceJsonParser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SourceJsonParser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C32FB522890D19D002BD219 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0C32FB562890D1F2002BD219 /* ListRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowViews.swift; sourceTree = "<group>"; };
+		0CAD77002E3D600000A1B2C3 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		0CAD77012E3D600000A1B2C4 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		0C3DD43E29B6968D006429DB /* KodiEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KodiEditorView.swift; sourceTree = "<group>"; };
 		0C3DD44029B6ACD9006429DB /* KodiServer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KodiServer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0C3DD44129B6ACD9006429DB /* KodiServer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KodiServer+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -565,9 +569,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0CAD77022E3D600000A1B2C5 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0CAD77002E3D600000A1B2C3 /* DesignTokens.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
+				0CAD77022E3D600000A1B2C5 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -610,6 +623,7 @@
 		0CA148C8288903F000DE2211 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0CAD77012E3D600000A1B2C4 /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -998,6 +1012,8 @@
 				0C2886D22960AC2800D6FC16 /* DebridCloudView.swift in Sources */,
 				0CA148D7288903F000DE2211 /* LoginWebView.swift in Sources */,
 				0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */,
+				0CAD77032E3D600000A1B2C6 /* DesignTokens.swift in Sources */,
+				0CAD77042E3D600000A1B2C7 /* Keyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

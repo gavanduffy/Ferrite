@@ -25,7 +25,7 @@ struct SettingsView: View {
     @AppStorage("Behavior.AutocorrectSearch") var autocorrectSearch = true
     @AppStorage("Behavior.UsesRandomSearchText") var usesRandomSearchText = false
     @AppStorage("Behavior.UseEphemeralAuth") var useEphemeralAuth = true
-    @AppStorage("Behavior.DisableRequestTimeout") var disableRequestTimeout = false
+    @AppStorage("Behavior.EnableRequestTimeout") var enableRequestTimeout = true
     @AppStorage("Behavior.RequestTimeoutSecs") var requestTimeoutSecs: Double = 15
 
     @AppStorage("Updates.AutomaticNotifs") var autoUpdateNotifs = true
@@ -77,7 +77,7 @@ struct SettingsView: View {
                     header: Text("Behavior"),
                     footer: VStack(alignment: .leading, spacing: 8) {
                         Text("Temporarily disable ephemeral auth if you cannot log into a service")
-                        Text("Only disable search timeout if results are slow to fetch")
+                        Text("Search timeout ensures results are returned in a timely manner")
                     }
                 ) {
                     Toggle(isOn: $autocorrectSearch) {
@@ -102,12 +102,11 @@ struct SettingsView: View {
                         }
                     }
 
-                    // TODO: Change this to enable search timeout instead
-                    Toggle(isOn: $disableRequestTimeout) {
-                        Text("Disable search timeout")
+                    Toggle(isOn: $enableRequestTimeout) {
+                        Text("Enable search timeout")
                     }
 
-                    if !disableRequestTimeout {
+                    if enableRequestTimeout {
                         HStack {
                             Text("Search timeout seconds")
 
