@@ -15,15 +15,24 @@ struct ListRowLinkView: View {
 
     var body: some View {
         HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+            if let url = URL(string: link) {
+                Link(text, destination: url)
+                    .foregroundColor(.primary)
+            } else {
+                Text(text)
+                    .foregroundColor(.primary)
+            }
 
             Spacer()
 
             Image(systemName: "arrow.up.forward.app.fill")
                 .foregroundColor(.gray)
+                .accessibilityHidden(true)
         }
         .padding(.trailing, -5)
+        .contentShape(Rectangle())
+        .accessibilityLabel(text)
+        .accessibilityHint("Opens in external browser")
     }
 }
 
@@ -39,19 +48,24 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button(action: action) {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                        .accessibilityHidden(true)
+                }
             }
+            .padding(.trailing, -5)
+            .contentShape(Rectangle())
         }
-        .padding(.trailing, -5)
+        .buttonStyle(.plain)
+        .accessibilityLabel(text)
     }
 }
 
@@ -68,10 +82,14 @@ struct ListRowTextView: View {
 
             if let rightText {
                 Text(rightText)
+                    .foregroundColor(.secondary)
             } else if let rightSymbol {
                 Image(systemName: rightSymbol)
+                    .foregroundColor(.secondary)
+                    .accessibilityHidden(true)
             }
         }
         .padding(.trailing, -5)
+        .contentShape(Rectangle())
     }
 }
