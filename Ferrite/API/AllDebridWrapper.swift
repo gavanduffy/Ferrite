@@ -75,7 +75,6 @@ class AllDebrid: PollingDebridSource, ObservableObject {
 
             return userUrl
         } catch {
-            print("Couldn't get pin information!")
             throw DebridError.AuthQuery(description: error.localizedDescription)
         }
     }
