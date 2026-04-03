@@ -8,6 +8,12 @@
 import Foundation
 
 extension Github {
+    enum GithubError: Error {
+        case InvalidUrl
+        case DecodeError
+        case NetworkError
+    }
+
     struct Release: Codable, Hashable, Sendable {
         let htmlUrl: String
         let tagName: String
