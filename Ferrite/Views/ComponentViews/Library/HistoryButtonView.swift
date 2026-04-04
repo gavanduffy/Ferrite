@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct HistoryButtonView: View {
     @EnvironmentObject var logManager: LoggingManager
@@ -16,6 +17,9 @@ struct HistoryButtonView: View {
 
     var body: some View {
         Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+
             navModel.selectedTitle = entry.name ?? ""
             navModel.selectedBatchTitle = entry.subName ?? ""
 
@@ -45,7 +49,7 @@ struct HistoryButtonView: View {
 
                     if let subName = entry.subName {
                         Text(subName)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondary)
                             .font(.subheadline)
                             .lineLimit(2)
                     }
@@ -68,10 +72,15 @@ struct HistoryButtonView: View {
                 }
                 .font(.caption)
             }
+            .padding(DesignTokens.Spacing.medium)
+            .liquidGlassCard(shadow: false)
             .disabledAppearance(navModel.currentChoiceSheet != nil, dimmedOpacity: 0.7, animation: .easeOut(duration: 0.2))
         }
+        .applyPressableButtonStyle()
         .tint(.primary)
         .disableInteraction(navModel.currentChoiceSheet != nil)
+        .accessibilityLabel("\(entry.name ?? "Unknown title")\(entry.subName != nil ? ", \(entry.subName!)" : ""), from \(entry.source ?? "unknown source")")
+        .accessibilityHint("Opens download and debrid options")
     }
 
     func getTagColor() -> Color {
