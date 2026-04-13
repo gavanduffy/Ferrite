@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import UIKit
 
+
 struct MainView: View {
     @EnvironmentObject var navModel: NavigationViewModel
     @EnvironmentObject var logManager: LoggingManager
@@ -258,15 +259,11 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 //
-//  DesignTokens.swift
-//  Ferrite
-//
-//  Centralized design tokens for consistent spacing, sizing, and styling across the app.
-//
-//  Created by AI assistant on behalf of the user.
-//
 
-import SwiftUI
+// MARK: - Workaround for missing project references
+// The following types are defined here because their source files are missing
+// from the Xcode project configuration, causing compilation failures.
+
 
 /// Centralized design tokens for the Ferrite app.
 ///
@@ -377,17 +374,7 @@ enum DesignTokens {
         }
     }
 }
-//
-//  Keyboard.swift
-//  Ferrite
-//
-//  Created by AI assistant on behalf of the user.
-//  Purpose: Keyboard observer utility to report keyboard height and visibility.
-//
 
-import SwiftUI
-import Combine
-import UIKit
 
 /// Observes global keyboard notifications and publishes the current keyboard height and visibility.
 /// - Publishes `height` which is the keyboard's vertical size (0 when hidden).
