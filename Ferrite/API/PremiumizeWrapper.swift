@@ -48,7 +48,10 @@ class Premiumize: OAuthDebridSource, ObservableObject {
     // MARK: - Auth
 
     func getAuthUrl() throws -> URL {
-        var urlComponents = URLComponents(string: baseAuthUrl)!
+        guard var urlComponents = URLComponents(string: baseAuthUrl) else {
+            throw DebridError.InvalidUrl
+        }
+
         urlComponents.queryItems = [
             URLQueryItem(name: "client_id", value: clientId),
             URLQueryItem(name: "response_type", value: "token"),
@@ -202,7 +205,11 @@ class Premiumize: OAuthDebridSource, ObservableObject {
             throw DebridError.EmptyData
         }
 
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/transfer/directdl")!)
+        guard let url = URL(string: "\(baseApiUrl)/transfer/directdl") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -257,7 +264,10 @@ class Premiumize: OAuthDebridSource, ObservableObject {
 
     // Parent function for initial checking of the cache
     private func checkCache(magnets: [Magnet]) async throws -> [Magnet] {
-        var urlComponents = URLComponents(string: "\(baseApiUrl)/cache/check")!
+        guard var urlComponents = URLComponents(string: "\(baseApiUrl)/cache/check") else {
+            throw DebridError.InvalidUrl
+        }
+
         urlComponents.queryItems = magnets.map { URLQueryItem(name: "items[]", value: $0.hash) }
         guard let url = urlComponents.url else {
             throw DebridError.InvalidUrl
@@ -311,7 +321,11 @@ class Premiumize: OAuthDebridSource, ObservableObject {
             throw DebridError.FailedRequest(description: "The magnet link is invalid")
         }
 
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/transfer/create")!)
+        guard let url = URL(string: "\(baseApiUrl)/transfer/create") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -326,7 +340,11 @@ class Premiumize: OAuthDebridSource, ObservableObject {
     // MARK: - Cloud methods
 
     func getUserDownloads() async throws {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/item/listall")!)
+        guard let url = URL(string: "\(baseApiUrl)/item/listall") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: url)
 
         let data = try await performRequest(request: &request, requestName: #function)
         let rawResponse = try jsonDecoder.decode(AllItemsResponse.self, from: data)
@@ -342,7 +360,10 @@ class Premiumize: OAuthDebridSource, ObservableObject {
     }
 
     private func itemDetails(itemID: String) async throws -> ItemDetailsResponse {
-        var urlComponents = URLComponents(string: "\(baseApiUrl)/item/details")!
+        guard var urlComponents = URLComponents(string: "\(baseApiUrl)/item/details") else {
+            throw DebridError.InvalidUrl
+        }
+
         urlComponents.queryItems = [URLQueryItem(name: "id", value: itemID)]
         guard let url = urlComponents.url else {
             throw DebridError.InvalidUrl
@@ -362,7 +383,11 @@ class Premiumize: OAuthDebridSource, ObservableObject {
     }
 
     func deleteUserDownload(downloadId: String) async throws {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/item/delete")!)
+        guard let url = URL(string: "\(baseApiUrl)/item/delete") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
