@@ -14,16 +14,31 @@ struct ListRowLinkView: View {
     let link: String
 
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        Group {
+            if let url = URL(string: link) {
+                Link(destination: url) {
+                    HStack {
+                        Text(text)
+                            .foregroundColor(.primary)
 
-            Spacer()
+                        Spacer()
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+                        Image(systemName: "arrow.up.forward.app.fill")
+                            .foregroundColor(.gray)
+                            .accessibilityHidden(true)
+                    }
+                    .contentShape(Rectangle())
+                }
+            } else {
+                HStack {
+                    Text(text)
+                        .foregroundColor(.primary)
+
+                    Spacer()
+                }
+            }
         }
-        .padding(.trailing, -5)
+        .padding(.trailing, DesignTokens.Spacing.small)
     }
 }
 
@@ -39,19 +54,26 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            action()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                        .accessibilityHidden(true)
+                }
             }
+            .contentShape(Rectangle())
         }
-        .padding(.trailing, -5)
+        .padding(.trailing, DesignTokens.Spacing.small)
     }
 }
 
@@ -70,8 +92,9 @@ struct ListRowTextView: View {
                 Text(rightText)
             } else if let rightSymbol {
                 Image(systemName: rightSymbol)
+                    .accessibilityHidden(true)
             }
         }
-        .padding(.trailing, -5)
+        .padding(.trailing, DesignTokens.Spacing.small)
     }
 }
