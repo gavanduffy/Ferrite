@@ -12,16 +12,24 @@ struct FormDataBody {
     let body: Data
 
     init(params: [String: String]) {
-        var body = Data()
+        var tempBody = Data()
 
         for (key, value) in params {
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
-            body.append("\(value)\r\n".data(using: .utf8)!)
+            if let boundaryPrefix = "--\(boundary)\r\n".data(using: .utf8) {
+                tempBody.append(boundaryPrefix)
+            }
+            if let disposition = "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8) {
+                tempBody.append(disposition)
+            }
+            if let valueData = "\(value)\r\n".data(using: .utf8) {
+                tempBody.append(valueData)
+            }
         }
 
-        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        if let boundarySuffix = "--\(boundary)--\r\n".data(using: .utf8) {
+            tempBody.append(boundarySuffix)
+        }
 
-        self.body = body
+        self.body = tempBody
     }
 }
