@@ -15,8 +15,13 @@ struct ListRowLinkView: View {
 
     var body: some View {
         HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+            if let url = URL(string: link) {
+                Link(text, destination: url)
+                    .foregroundColor(.primary)
+            } else {
+                Text(text)
+                    .foregroundColor(.secondary)
+            }
 
             Spacer()
 
