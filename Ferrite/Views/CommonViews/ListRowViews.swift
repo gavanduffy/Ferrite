@@ -15,15 +15,22 @@ struct ListRowLinkView: View {
 
     var body: some View {
         HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+            if let url = URL(string: link) {
+                Link(text, destination: url)
+                    .foregroundColor(.primary)
+            } else {
+                Text(text)
+                    .foregroundColor(.primary)
+            }
 
             Spacer()
 
             Image(systemName: "arrow.up.forward.app.fill")
                 .foregroundColor(.gray)
+                .accessibilityHidden(true)
         }
-        .padding(.trailing, -5)
+        .padding(.trailing, DesignTokens.Spacing.small)
+        .contentShape(Rectangle())
     }
 }
 
