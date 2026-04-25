@@ -25,6 +25,7 @@ struct AboutView: View {
                 VStack(alignment: .center) {
                     Image("AppImage")
                         .resizable()
+                        .accessibilityHidden(true)
                         .frame(width: 100, height: 100)
                         .clipShape(RoundedRectangle(cornerRadius: 100 * 0.225, style: .continuous))
                         .padding(.top, 24)
