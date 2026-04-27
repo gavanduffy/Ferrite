@@ -15,14 +15,21 @@ struct ListRowLinkView: View {
 
     var body: some View {
         HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+            if let url = URL(string: link) {
+                Link(text, destination: url)
+                    .foregroundColor(.primary)
+            } else {
+                Text(text)
+                    .foregroundColor(.secondary)
+            }
 
             Spacer()
 
             Image(systemName: "arrow.up.forward.app.fill")
                 .foregroundColor(.gray)
+                .accessibilityHidden(true)
         }
+        .contentShape(Rectangle())
         .padding(.trailing, -5)
     }
 }
@@ -49,8 +56,10 @@ struct ListRowButtonView: View {
             if let imageName = systemImage {
                 Image(systemName: imageName)
                     .foregroundColor(.gray)
+                    .accessibilityHidden(true)
             }
         }
+        .contentShape(Rectangle())
         .padding(.trailing, -5)
     }
 }
@@ -70,8 +79,10 @@ struct ListRowTextView: View {
                 Text(rightText)
             } else if let rightSymbol {
                 Image(systemName: rightSymbol)
+                    .accessibilityHidden(true)
             }
         }
+        .contentShape(Rectangle())
         .padding(.trailing, -5)
     }
 }
