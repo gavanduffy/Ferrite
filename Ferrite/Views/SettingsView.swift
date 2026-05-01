@@ -215,11 +215,13 @@ struct SettingsView: View {
                 }
             }
             .sheet(isPresented: $debridManager.showWebView) {
-                LoginWebView(url: debridManager.authUrl ?? URL(string: "https://google.com")!)
+                if let authUrl = debridManager.authUrl {
+                    LoginWebView(url: authUrl)
+                }
             }
             .webAuthenticationSession(isPresented: $debridManager.showAuthSession) {
                 WebAuthenticationSession(
-                    url: debridManager.authUrl ?? URL(string: "https://google.com")!,
+                    url: debridManager.authUrl ?? URL(string: "about:blank") ?? URL(fileURLWithPath: ""),
                     callbackURLScheme: "ferrite"
                 ) { callbackURL, error in
                     Task {

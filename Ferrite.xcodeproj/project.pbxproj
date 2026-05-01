@@ -118,7 +118,6 @@
 		0CA148D8288903F000DE2211 /* ActionChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148BD288903F000DE2211 /* ActionChoiceView.swift */; };
 		0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA148C2288903F000DE2211 /* Assets.xcassets */; };
 		0CA148DD288903F000DE2211 /* ScrapingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */; };
-		0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA148C6288903F000DE2211 /* Preview Assets.xcassets */; };
 		0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C7288903F000DE2211 /* FerriteApp.swift */; };
 		0CA148E1288903F000DE2211 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C9288903F000DE2211 /* Collection.swift */; };
 		0CA148E2288903F000DE2211 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148CA288903F000DE2211 /* Data.swift */; };
@@ -275,7 +274,6 @@
 		0CA148BD288903F000DE2211 /* ActionChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionChoiceView.swift; sourceTree = "<group>"; };
 		0CA148C2288903F000DE2211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrapingViewModel.swift; sourceTree = "<group>"; };
-		0CA148C6288903F000DE2211 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0CA148C7288903F000DE2211 /* FerriteApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FerriteApp.swift; sourceTree = "<group>"; };
 		0CA148C9288903F000DE2211 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		0CA148CA288903F000DE2211 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -602,7 +600,6 @@
 		0CA148C5288903F000DE2211 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0CA148C6288903F000DE2211 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -815,7 +812,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C794B6D289EFA2E00DD1CC8 /* LaunchScreen.storyboard in Resources */,
-				0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */,
 				0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1230,26 +1226,26 @@
 		};
 		0C4CFC442897030D00AD9FAD /* XCRemoteSwiftPackageReference "Regex" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Regex";
+			repositoryURL = "https://github.com/sindresorhus/Regex.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 		0C64A4B2288903680079976D /* XCRemoteSwiftPackageReference "Base32" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/norio-nomura/Base32";
+			repositoryURL = "https://github.com/norio-nomura/Base32.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.4;
 			};
 		};
 		0C64A4B5288903880079976D /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
 			};
 		};
 		0C748ED829D9256D0049B8BE /* XCRemoteSwiftPackageReference "Yams" */ = {
@@ -1262,10 +1258,10 @@
 		};
 		0C7506D528B1AC9A008BEE38 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
 			};
 		};
 		0CAF1C79286F5C8600296F86 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
@@ -1278,10 +1274,10 @@
 		};
 		0CDDDE032935235E006810B1 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stleamist/BetterSafariView";
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

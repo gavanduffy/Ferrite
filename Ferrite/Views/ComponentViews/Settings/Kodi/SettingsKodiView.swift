@@ -22,7 +22,9 @@ struct SettingsKodiView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Kodi is an external application that is used to manage a local media library and playback.")
 
-                    Link("Website", destination: URL(string: "https://kodi.tv")!)
+                    if let websiteUrl = URL(string: "https://kodi.tv") {
+                        Link("Website", destination: websiteUrl)
+                    }
                 }
             }
 
