@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct HistoryButtonView: View {
     @EnvironmentObject var logManager: LoggingManager
@@ -16,6 +17,9 @@ struct HistoryButtonView: View {
 
     var body: some View {
         Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+
             navModel.selectedTitle = entry.name ?? ""
             navModel.selectedBatchTitle = entry.subName ?? ""
 
@@ -37,7 +41,7 @@ struct HistoryButtonView: View {
                 )
             }
         } label: {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: DesignTokens.Spacing.medium) {
                 VStack(alignment: .leading) {
                     Text(entry.name ?? "Unknown title")
                         .font(entry.subName == nil ? .body : .subheadline)
@@ -45,7 +49,7 @@ struct HistoryButtonView: View {
 
                     if let subName = entry.subName {
                         Text(subName)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondary)
                             .font(.subheadline)
                             .lineLimit(2)
                     }
@@ -70,8 +74,11 @@ struct HistoryButtonView: View {
             }
             .disabledAppearance(navModel.currentChoiceSheet != nil, dimmedOpacity: 0.7, animation: .easeOut(duration: 0.2))
         }
+        .buttonStyle(PressableButtonStyle())
         .tint(.primary)
         .disableInteraction(navModel.currentChoiceSheet != nil)
+        .accessibilityLabel("\(entry.name ?? "Unknown title")\(entry.subName != nil ? ", \(entry.subName!)" : "")")
+        .accessibilityHint("Tap to open link actions for this history item")
     }
 
     func getTagColor() -> Color {
