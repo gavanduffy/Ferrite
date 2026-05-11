@@ -30,6 +30,8 @@ struct WebView: UIViewRepresentable {
 
 struct WebView_Previews: PreviewProvider {
     static var previews: some View {
-        WebView(url: URL(string: "https://google.com")!)
+        if let url = URL(string: "https://google.com") {
+            WebView(url: url)
+        }
     }
 }
