@@ -215,11 +215,15 @@ struct SettingsView: View {
                 }
             }
             .sheet(isPresented: $debridManager.showWebView) {
-                LoginWebView(url: debridManager.authUrl ?? URL(string: "https://google.com")!)
+                if let authUrl = debridManager.authUrl {
+                    LoginWebView(url: authUrl)
+                } else {
+                    Text("Invalid authentication URL")
+                }
             }
             .webAuthenticationSession(isPresented: $debridManager.showAuthSession) {
                 WebAuthenticationSession(
-                    url: debridManager.authUrl ?? URL(string: "https://google.com")!,
+                    url: debridManager.authUrl ?? URL(string: "https://kingbri.dev/ferrite") ?? URL(fileURLWithPath: ""),
                     callbackURLScheme: "ferrite"
                 ) { callbackURL, error in
                     Task {

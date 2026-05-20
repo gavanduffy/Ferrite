@@ -29,6 +29,8 @@ struct LoginWebView: View {
 
 struct LoginWebView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginWebView(url: URL(string: "https://google.com")!)
+        if let url = URL(string: "https://google.com") {
+            LoginWebView(url: url)
+        }
     }
 }
