@@ -118,7 +118,6 @@
 		0CA148D8288903F000DE2211 /* ActionChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148BD288903F000DE2211 /* ActionChoiceView.swift */; };
 		0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA148C2288903F000DE2211 /* Assets.xcassets */; };
 		0CA148DD288903F000DE2211 /* ScrapingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */; };
-		0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA148C6288903F000DE2211 /* Preview Assets.xcassets */; };
 		0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C7288903F000DE2211 /* FerriteApp.swift */; };
 		0CA148E1288903F000DE2211 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C9288903F000DE2211 /* Collection.swift */; };
 		0CA148E2288903F000DE2211 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148CA288903F000DE2211 /* Data.swift */; };
@@ -166,6 +165,8 @@
 		0CF1ABDC2C0C04B2009F6C26 /* Debrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */; };
 		0CF1ABE22C0C3D2F009F6C26 /* DebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */; };
 		0CF2C0A529D1EBD400E716DD /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C0A429D1EBD400E716DD /* UIApplication.swift */; };
+		0C52345628D4DDC6007711B0 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52345628D4DDC6007711B1 /* Keyboard.swift */; };
+		0C52345628D4DDC6007711B2 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52345628D4DDC6007711B3 /* DesignTokens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -275,7 +276,6 @@
 		0CA148BD288903F000DE2211 /* ActionChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionChoiceView.swift; sourceTree = "<group>"; };
 		0CA148C2288903F000DE2211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrapingViewModel.swift; sourceTree = "<group>"; };
-		0CA148C6288903F000DE2211 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0CA148C7288903F000DE2211 /* FerriteApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FerriteApp.swift; sourceTree = "<group>"; };
 		0CA148C9288903F000DE2211 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		0CA148CA288903F000DE2211 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -323,6 +323,8 @@
 		0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debrid.swift; sourceTree = "<group>"; };
 		0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebridModels.swift; sourceTree = "<group>"; };
 		0CF2C0A429D1EBD400E716DD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0C52345628D4DDC6007711B1 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		0C52345628D4DDC6007711B3 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +578,7 @@
 				0CA148EE2889061200DE2211 /* Views */,
 				0C44E2A628D4DDC6007711AE /* Utils */,
 				0C5005552992B9C20064606A /* Protocols */,
+				0C52345628D4DDC6007711B4 /* Design */,
 				0CA148C8288903F000DE2211 /* Extensions */,
 				0CA148C5288903F000DE2211 /* Preview Content */,
 				0CA148C7288903F000DE2211 /* FerriteApp.swift */,
@@ -602,7 +605,6 @@
 		0CA148C5288903F000DE2211 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0CA148C6288903F000DE2211 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -616,6 +618,7 @@
 				0C7075E329D374C50093DB2D /* Color.swift */,
 				0CA148CA288903F000DE2211 /* Data.swift */,
 				0CA429F728C5098D000D0610 /* DateFormatter.swift */,
+				0C52345628D4DDC6007711B1 /* Keyboard.swift */,
 				0C70E40528C40C4E00A5C72D /* NotificationCenter.swift */,
 				0C78041C28BFB3EA001E8CA3 /* String.swift */,
 				0CA148CB288903F000DE2211 /* Task.swift */,
@@ -628,6 +631,14 @@
 				0CF2C0A429D1EBD400E716DD /* UIApplication.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0C52345628D4DDC6007711B4 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0C52345628D4DDC6007711B3 /* DesignTokens.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		0CA148EE2889061200DE2211 /* Views */ = {
@@ -815,7 +826,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C794B6D289EFA2E00DD1CC8 /* LaunchScreen.storyboard in Resources */,
-				0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */,
 				0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -998,6 +1008,8 @@
 				0C2886D22960AC2800D6FC16 /* DebridCloudView.swift in Sources */,
 				0CA148D7288903F000DE2211 /* LoginWebView.swift in Sources */,
 				0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */,
+				0C52345628D4DDC6007711B0 /* Keyboard.swift in Sources */,
+				0C52345628D4DDC6007711B2 /* DesignTokens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

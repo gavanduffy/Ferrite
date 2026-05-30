@@ -74,7 +74,10 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Fetches the device code from RD
     func getAuthUrl() async throws -> URL {
-        var urlComponents = URLComponents(string: "\(baseAuthUrl)/device/code")!
+        guard var urlComponents = URLComponents(string: "\(baseAuthUrl)/device/code") else {
+            throw DebridError.InvalidUrl
+        }
+
         urlComponents.queryItems = [
             URLQueryItem(name: "client_id", value: openSourceClientId),
             URLQueryItem(name: "new_credentials", value: "yes")
@@ -108,7 +111,10 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Fetches the user's client ID and secret
     func getDeviceCredentials(deviceCode: String) async throws {
-        var urlComponents = URLComponents(string: "\(baseAuthUrl)/device/credentials")!
+        guard var urlComponents = URLComponents(string: "\(baseAuthUrl)/device/credentials") else {
+            throw DebridError.InvalidUrl
+        }
+
         urlComponents.queryItems = [
             URLQueryItem(name: "client_id", value: openSourceClientId),
             URLQueryItem(name: "code", value: deviceCode)
@@ -160,7 +166,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
             throw DebridError.EmptyData
         }
 
-        var request = URLRequest(url: URL(string: "\(baseAuthUrl)/token")!)
+        guard let tokenUrl = URL(string: "\(baseAuthUrl)/token") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: tokenUrl)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -221,9 +231,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
         // Run the request, doesn't matter if it fails
         if let token = FerriteKeychain.shared.get("RealDebrid.AccessToken") {
-            var request = URLRequest(url: URL(string: "\(baseApiUrl)/disable_access_token")!)
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            _ = try? await URLSession.shared.data(for: request)
+            if let logoutUrl = URL(string: "\(baseApiUrl)/disable_access_token") {
+                var request = URLRequest(url: logoutUrl)
+                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                _ = try? await URLSession.shared.data(for: request)
+            }
 
             FerriteKeychain.shared.delete("RealDebrid.AccessToken")
             await removeUserDefaultsValue(forKey: "RealDebrid.UseManualKey")
@@ -355,7 +367,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
             throw DebridError.FailedRequest(description: "The magnet link is invalid")
         }
 
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/addMagnet")!)
+        guard let addMagnetUrl = URL(string: "\(baseApiUrl)/torrents/addMagnet") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: addMagnetUrl)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -372,7 +388,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Queues the magnet link for downloading
     func selectFiles(debridID: String, fileIds: [Int]) async throws {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/selectFiles/\(debridID)")!)
+        guard let selectFilesUrl = URL(string: "\(baseApiUrl)/torrents/selectFiles/\(debridID)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: selectFilesUrl)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -392,7 +412,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Gets the info of a torrent from a given ID
     func torrentInfo(debridID: String) async throws -> TorrentInfoResponse {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/info/\(debridID)")!)
+        guard let infoUrl = URL(string: "\(baseApiUrl)/torrents/info/\(debridID)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: infoUrl)
 
         let data = try await performRequest(request: &request, requestName: #function)
         let rawResponse = try jsonDecoder.decode(TorrentInfoResponse.self, from: data)
@@ -410,7 +434,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Downloads link from selectFiles for playback
     func unrestrictFile(_ restrictedFile: DebridIAFile) async throws -> String {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/unrestrict/link")!)
+        guard let unrestrictUrl = URL(string: "\(baseApiUrl)/unrestrict/link") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: unrestrictUrl)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -429,7 +457,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Gets the user's cloud magnet library
     func getUserMagnets() async throws {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents")!)
+        guard let torrentsUrl = URL(string: "\(baseApiUrl)/torrents") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: torrentsUrl)
 
         let data = try await performRequest(request: &request, requestName: #function)
         let rawResponse = try jsonDecoder.decode([UserTorrentsResponse].self, from: data)
@@ -461,7 +493,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
             deleteId = firstCloudMagnet.id
         }
 
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/delete/\(deleteId)")!)
+        guard let deleteUrl = URL(string: "\(baseApiUrl)/torrents/delete/\(deleteId)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: deleteUrl)
         request.httpMethod = "DELETE"
 
         try await performRequest(request: &request, requestName: #function)
@@ -469,7 +505,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
 
     // Gets the user's downloads
     func getUserDownloads() async throws {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/downloads")!)
+        guard let downloadsUrl = URL(string: "\(baseApiUrl)/downloads") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: downloadsUrl)
 
         let data = try await performRequest(request: &request, requestName: #function)
         let rawResponse = try jsonDecoder.decode([UserDownloadsResponse].self, from: data)
@@ -484,7 +524,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
     }
 
     func deleteUserDownload(downloadId: String) async throws {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/downloads/delete/\(downloadId)")!)
+        guard let deleteUrl = URL(string: "\(baseApiUrl)/downloads/delete/\(downloadId)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: deleteUrl)
         request.httpMethod = "DELETE"
 
         try await performRequest(request: &request, requestName: #function)
@@ -590,7 +634,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
     }
 
     private func unrestrictWebLink(link: String) async throws -> UnrestrictLinkResponse {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/unrestrict/link")!)
+        guard let unrestrictUrl = URL(string: "\(baseApiUrl)/unrestrict/link") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: unrestrictUrl)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -628,7 +676,10 @@ class RealDebrid: PollingDebridSource, ObservableObject {
     }
 
     private func addTorrentUrl() async throws -> URL {
-        var urlComponents = URLComponents(string: "\(baseApiUrl)/torrents/addTorrent")!
+        guard var urlComponents = URLComponents(string: "\(baseApiUrl)/torrents/addTorrent") else {
+            throw DebridError.InvalidUrl
+        }
+
         if let host = try await availableHost() {
             urlComponents.queryItems = [URLQueryItem(name: "host", value: host)]
         }
@@ -641,7 +692,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
     }
 
     private func availableHost() async throws -> String? {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/availableHosts")!)
+        guard let hostsUrl = URL(string: "\(baseApiUrl)/torrents/availableHosts") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: hostsUrl)
         let data = try await performRequest(request: &request, requestName: #function)
         let hosts = try jsonDecoder.decode([AvailableHostResponse].self, from: data)
         return hosts.first?.host
@@ -664,7 +719,11 @@ class RealDebrid: PollingDebridSource, ObservableObject {
     }
 
     internal func torrentInfoAllowCaching(debridID: String) async throws -> TorrentInfoResponse {
-        var request = URLRequest(url: URL(string: "\(baseApiUrl)/torrents/info/\(debridID)")!)
+        guard let infoUrl = URL(string: "\(baseApiUrl)/torrents/info/\(debridID)") else {
+            throw DebridError.InvalidUrl
+        }
+
+        var request = URLRequest(url: infoUrl)
 
         let data = try await performRequest(request: &request, requestName: #function)
         let rawResponse = try jsonDecoder.decode(TorrentInfoResponse.self, from: data)
