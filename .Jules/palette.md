@@ -20,3 +20,7 @@
 **Learning:** When implementing "empty states" in SwiftUI, using a single reusable component like `EmptyInstructionView` is efficient, but it must be flexible enough to provide context-specific icons (SF Symbols) to remain intuitive. Additionally, for better VoiceOver support, grouping the title and message into a single accessibility element using `.accessibilityElement(children: .combine)` provides a much smoother experience than navigating through separate labels. Marking decorative icons as `.accessibilityHidden(true)` is also crucial for reducing noise.
 
 **Action:** Always provide an icon property in reusable state views and ensure accessibility grouping is applied to related text elements to improve VoiceOver flow in Ferrite.
+
+## 2026-05-30 - Full-Row Tap Targets in Lists
+**Learning:** Standard SwiftUI `Link` and `Button` in a `List` row only register taps on their text/label, leaving the rest of the row (like spacers or trailing icons) dead zones. Wrapping the entire `HStack` in a `Button` label and applying `.contentShape(Rectangle())` ensures the whole row is tappable, significantly improving ergonomics.
+**Action:** Replace direct `Link` and icon-only buttons in list rows with a full-row `Button` wrapper and `.contentShape(Rectangle())` for better hit testing.

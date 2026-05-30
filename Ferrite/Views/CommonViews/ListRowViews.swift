@@ -10,19 +10,35 @@
 import SwiftUI
 
 struct ListRowLinkView: View {
+    @Environment(\.openURL) var openURL
+
     let text: String
     let link: String
 
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        Button {
+            guard let url = URL(string: link) else { return }
 
-            Spacer()
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            openURL(url)
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+                Spacer()
+
+                Image(systemName: "arrow.up.forward.app.fill")
+                    .foregroundColor(.gray)
+                    .accessibilityHidden(true)
+            }
+            .contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
+        .applyPressableButtonStyle()
+        .accessibilityLabel(text)
+        .accessibilityHint("Opens in external browser")
+        .accessibilityAddTraits(.isLink)
         .padding(.trailing, -5)
     }
 }
@@ -39,18 +55,27 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            action()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                        .accessibilityHidden(true)
+                }
             }
+            .contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
+        .applyPressableButtonStyle()
+        .accessibilityLabel(text)
         .padding(.trailing, -5)
     }
 }
