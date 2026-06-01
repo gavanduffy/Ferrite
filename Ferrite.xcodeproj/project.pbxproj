@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C288AC978DC40619F49F21B /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5304729CF4BE7A0EAC082 /* SourceCatalogButtonView.swift */; };
+		0C0A0FFE772A4442869E97CB /* TestHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD1800C55D843249D7C3B26 /* TestHostingView.swift */; };
+		0C1F89493F2F4BDCB82D1C14 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C68781C86BC4E4FAA1A9868 /* SectionHeaderView.swift */; };
+		0C2BD8CC36454B3E8251A8D8 /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1640F0A1C847CDB3AB3681 /* SearchableContent.swift */; };
+		0C41A311E93742A0A28D6FCD /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEADC90A6834B5589992351 /* LibraryHeaderView.swift */; };
+		0CEC54F28BEE4F1A820CBC17 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96AE1F17EC4756BE88142D /* DesignTokens.swift */; };
+		0CD7C29F697C420F817D471C /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB40716DF0249B3A29BEC6A /* Keyboard.swift */; };
 		0C0167DC29293FA900B65783 /* RealDebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0167DB29293FA900B65783 /* RealDebridModels.swift */; };
 		0C91A1AB2E3C5C4A00C4B2C1 /* GlassTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */; };
 		0C018C1B2E3C1D1A00B8C5A1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */; };
@@ -167,8 +174,14 @@
 		0CF1ABE22C0C3D2F009F6C26 /* DebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */; };
 		0CF2C0A529D1EBD400E716DD /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C0A429D1EBD400E716DD /* UIApplication.swift */; };
 /* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
+		0CD5304729CF4BE7A0EAC082 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
+		0CD1800C55D843249D7C3B26 /* TestHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHostingView.swift; sourceTree = "<group>"; };
+		0C68781C86BC4E4FAA1A9868 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		0C1640F0A1C847CDB3AB3681 /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		0CEADC90A6834B5589992351 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0C96AE1F17EC4756BE88142D /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		0CB40716DF0249B3A29BEC6A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		0C0167DB29293FA900B65783 /* RealDebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDebridModels.swift; sourceTree = "<group>"; };
 		0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTabBarView.swift; sourceTree = "<group>"; };
 		0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -324,7 +337,6 @@
 		0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebridModels.swift; sourceTree = "<group>"; };
 		0CF2C0A429D1EBD400E716DD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		0CAF1C65286F5C0E00296F86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -342,7 +354,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
 		0C0755C22934241F00ECA142 /* SheetViews */ = {
 			isa = PBXGroup;
@@ -350,34 +361,20 @@
 				0CA148BD288903F000DE2211 /* ActionChoiceView.swift */,
 				0CBC76FC288D914F0054BE44 /* BatchChoiceView.swift */,
 				0C82BE7A2E3C1E9C0096B1F4 /* DebridTransferBrowserView.swift */,
-			);
 			path = SheetViews;
 			sourceTree = "<group>";
-		};
 		0C0755C32934244500ECA142 /* ComponentViews */ = {
-			isa = PBXGroup;
-			children = (
 				0C84FCDB29E4B3F400B0DFE4 /* Filters */,
 				0C3E00D4296F560800ECECB2 /* Plugin */,
 				0C0755C42934245800ECA142 /* Debrid */,
 				0CA3B23528C265FD00616D3A /* Library */,
 				0C44E2AB28D4E126007711AE /* SearchResult */,
 				0CA0545C288F7CB200850554 /* Settings */,
-			);
 			path = ComponentViews;
-			sourceTree = "<group>";
-		};
 		0C0755C42934245800ECA142 /* Debrid */ = {
-			isa = PBXGroup;
-			children = (
 				0C0755C5293424A200ECA142 /* DebridLabelView.swift */,
-			);
 			path = Debrid;
-			sourceTree = "<group>";
-		};
 		0C0D50DE288DF72D0035ECC8 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
 				0C3DD44029B6ACD9006429DB /* KodiServer+CoreDataClass.swift */,
 				0C3DD44129B6ACD9006429DB /* KodiServer+CoreDataProperties.swift */,
 				0C5005582992BA6A0064606A /* PluginTag+CoreDataClass.swift */,
@@ -404,13 +401,8 @@
 				0C84F47D2895BFED0074B7C9 /* SourceHtmlParser+CoreDataProperties.swift */,
 				0CEE11AF2C1743E0004C8BB2 /* SourceRequest+CoreDataClass.swift */,
 				0CEE11B02C1743E0004C8BB2 /* SourceRequest+CoreDataProperties.swift */,
-			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
 		0C0D50E3288DFE6E0035ECC8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
 				0C3E00CF296F4DB200ECECB2 /* ActionModels.swift */,
 				0C6C7C9C29315292002DF910 /* AllDebridModels.swift */,
 				0C7ED14028D61BBA009E29AD /* BackupModels.swift */,
@@ -428,41 +420,21 @@
 				0C1A3E5129C8A7F500DA9730 /* SettingsModels.swift */,
 				0C890E4A2C188FA7003B17B5 /* TorBoxModels.swift */,
 				0C07C6052C1B2F7600808A46 /* OffCloudModels.swift */,
-			);
 			path = Models;
-			sourceTree = "<group>";
-		};
 		0C2886D52960C4F800D6FC16 /* Cloud */ = {
-			isa = PBXGroup;
-			children = (
 				0CB725312C123E6F0047FC0B /* CloudDownloadView.swift */,
 				0CB725332C123E760047FC0B /* CloudMagnetView.swift */,
-			);
 			path = Cloud;
-			sourceTree = "<group>";
-		};
 		0C3DD43C29B69664006429DB /* Kodi */ = {
-			isa = PBXGroup;
-			children = (
 				0C6771F529B3B602005D38D2 /* SettingsKodiView.swift */,
 				0C3DD43E29B6968D006429DB /* KodiEditorView.swift */,
 				0CB0AB5E29BD2A200015422C /* KodiServerView.swift */,
-			);
 			path = Kodi;
-			sourceTree = "<group>";
-		};
 		0C3DD43D29B69672006429DB /* PluginList */ = {
-			isa = PBXGroup;
-			children = (
 				0CA05456288EE58200850554 /* SettingsPluginListView.swift */,
 				0CA0545A288EEA4E00850554 /* PluginListEditorView.swift */,
-			);
 			path = PluginList;
-			sourceTree = "<group>";
-		};
 		0C3E00D4296F560800ECECB2 /* Plugin */ = {
-			isa = PBXGroup;
-			children = (
 				0CD4030829DA01A3008D9F03 /* Info */,
 				0C44E2AA28D4E09B007711AE /* Buttons */,
 				0C794B65289DAC9F00DD1CC8 /* Source */,
@@ -470,89 +442,49 @@
 				0C5005512992B6750064606A /* PluginTagsView.swift */,
 				0CD5F1FC299C083B00476DDB /* PluginPickerView.swift */,
 				0C8DC35129CE287E008A83AD /* PluginInfoView.swift */,
-			);
 			path = Plugin;
-			sourceTree = "<group>";
-		};
 		0C44E2A628D4DDC6007711AE /* Utils */ = {
-			isa = PBXGroup;
-			children = (
 				0C44E2A728D4DDDC007711AE /* Application.swift */,
 				0C1A3E5529C9488C00DA9730 /* CodableWrapper.swift */,
 				0C1234567890ABCDEF12345B /* UnchainedAdapter.swift */,
 				0CD0265629FEFBF900A83D25 /* FerriteKeychain.swift */,
 				0C8AE2472C0FFB6600701675 /* Store.swift */,
 				0C07C6032C1A859B00808A46 /* FormDataBody.swift */,
-			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
 		0C44E2A928D4DFC4007711AE /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
 				0CD5E78828CD932B001BF684 /* DisabledAppearance.swift */,
 				0CBAB83528D12ED500AC903E /* DisableInteraction.swift */,
 				0CB6516428C5A5D700DCA721 /* InlinedList.swift */,
-			);
 			path = Modifiers;
-			sourceTree = "<group>";
-		};
 		0C44E2AA28D4E09B007711AE /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
-			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
 		0C44E2AB28D4E126007711AE /* SearchResult */ = {
-			isa = PBXGroup;
-			children = (
 				0C41BC6228C2AD0F00B47DD6 /* SearchResultButtonView.swift */,
 				0C57D4CB289032ED008534E8 /* SearchResultInfoView.swift */,
 				0CEC8AAD299B31B6007BFE8F /* SearchFilterHeaderView.swift */,
 				0CB0115A29D36D9E009AFEDE /* SearchResultsView.swift */,
-			);
 			path = SearchResult;
-			sourceTree = "<group>";
-		};
 		0C5005552992B9C20064606A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
 				0CE1C4172981E8D700418F20 /* Plugin.swift */,
 				0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */,
-			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
 		0C794B65289DAC9F00DD1CC8 /* Source */ = {
-			isa = PBXGroup;
-			children = (
 				0C733286289C4C820058D1FE /* SourceSettingsView.swift */,
 				0C8DC35329CE2AB5008A83AD /* SourceSettingsBaseUrlView.swift */,
 				0C8DC35529CE2ABF008A83AD /* SourceSettingsApiView.swift */,
 				0C8DC35729CE2ACA008A83AD /* SourceSettingsMethodView.swift */,
-			);
 			path = Source;
-			sourceTree = "<group>";
-		};
 		0C84FCDB29E4B3F400B0DFE4 /* Filters */ = {
-			isa = PBXGroup;
-			children = (
 				0C84FCE029E4B41D00B0DFE4 /* SourceFilterView.swift */,
 				0C84FCE229E4B42600B0DFE4 /* IAFilterView.swift */,
 				0C871BDE29994D9D005279AC /* FilterLabelView.swift */,
 				0C84FCE829E5ADEF00B0DFE4 /* FilterAmountLabelView.swift */,
 				0C2B028E29E9E61E00DCF127 /* SortFilterView.swift */,
 				0C1234567890ABCDEF123456 /* DebridServiceToggle.swift */,
-			);
 			path = Filters;
-			sourceTree = "<group>";
-		};
 		0CA0545C288F7CB200850554 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
 				0C3DD43D29B69672006429DB /* PluginList */,
 				0C3DD43C29B69664006429DB /* Kodi */,
 				0C44E2AE28D52E8A007711AE /* BackupsView.swift */,
@@ -561,13 +493,9 @@
 				0C6771FD29B521F1005D38D2 /* SettingsDebridInfoView.swift */,
 				0C5708EA29B8F89300BE07F9 /* SettingsLogView.swift */,
 				0C93DED72CF80101009EA8D2 /* SettingsDebridLinkView.swift */,
-			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
-			isa = PBXGroup;
-			children = (
+				0CA0293FD38C414693761BF7 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -581,13 +509,8 @@
 				0CA148C7288903F000DE2211 /* FerriteApp.swift */,
 				0C794B6C289EFA2E00DD1CC8 /* LaunchScreen.storyboard */,
 				0CA148C2288903F000DE2211 /* Assets.xcassets */,
-			);
 			path = Ferrite;
-			sourceTree = "<group>";
-		};
 		0CA148C0288903F000DE2211 /* CommonViews */ = {
-			isa = PBXGroup;
-			children = (
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
@@ -595,21 +518,15 @@
 				0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */,
 				0C2D9652299316CC00A504B6 /* Tag.swift */,
 				0C6771FB29B3E0DB005D38D2 /* HybridSecureField.swift */,
-			);
 			path = CommonViews;
-			sourceTree = "<group>";
-		};
 		0CA148C5288903F000DE2211 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
 				0CA148C6288903F000DE2211 /* Preview Assets.xcassets */,
-			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
+		0CA0293FD38C414693761BF7 /* Design */ = {
+				0C96AE1F17EC4756BE88142D /* DesignTokens.swift */,
+			path = Design;
 		0CA148C8288903F000DE2211 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
+				0CB40716DF0249B3A29BEC6A /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -626,13 +543,8 @@
 				0C7C128528DAA3CD00381CD1 /* URL.swift */,
 				0C50B7CF299DF63C00A9FA3C /* UIDevice.swift */,
 				0CF2C0A429D1EBD400E716DD /* UIApplication.swift */,
-			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
 		0CA148EE2889061200DE2211 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				0C0755C32934244500ECA142 /* ComponentViews */,
 				0CA148F02889062700DE2211 /* RepresentableViews */,
 				0CA148C0288903F000DE2211 /* CommonViews */,
@@ -645,36 +557,21 @@
 				0CA148BB288903F000DE2211 /* SettingsView.swift */,
 				0C32FB522890D19D002BD219 /* AboutView.swift */,
 				0CA148BC288903F000DE2211 /* LoginWebView.swift */,
-			);
 			path = Views;
-			sourceTree = "<group>";
-		};
 		0CA148EF2889061600DE2211 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
 				0CA148CD288903F000DE2211 /* DebridManager.swift */,
 				0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */,
 				0CA148CF288903F000DE2211 /* LoggingManager.swift */,
 				0CBC76FE288DAAD00054BE44 /* NavigationViewModel.swift */,
 				0CA05458288EE9E600850554 /* PluginManager.swift */,
 				0C44E2AC28D51C63007711AE /* BackupManager.swift */,
-			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		0CA148F02889062700DE2211 /* RepresentableViews */ = {
-			isa = PBXGroup;
-			children = (
 				0CA148CE288903F000DE2211 /* WebView.swift */,
 				0C7075E529D3845D0093DB2D /* ShareSheet.swift */,
 				0CC2CA7329E24F63000A8585 /* ExpandedSearchable.swift */,
-			);
 			path = RepresentableViews;
-			sourceTree = "<group>";
-		};
 		0CA148F12889066000DE2211 /* API */ = {
-			isa = PBXGroup;
-			children = (
 				0C6C7C9A2931521B002DF910 /* AllDebridWrapper.swift */,
 				0C68134F28BC1A2D00FAD890 /* GithubWrapper.swift */,
 				0C422E7D293542EA00486D65 /* PremiumizeWrapper.swift */,
@@ -682,13 +579,8 @@
 				0C6771F329B3B4FD005D38D2 /* KodiWrapper.swift */,
 				0C890E482C188808003B17B5 /* TorBoxWrapper.swift */,
 				0C07C6072C1B2F8000808A46 /* OffCloudWrapper.swift */,
-			);
 			path = API;
-			sourceTree = "<group>";
-		};
 		0CA3B23528C265FD00616D3A /* Library */ = {
-			isa = PBXGroup;
-			children = (
 				0C2886D52960C4F800D6FC16 /* Cloud */,
 				0CA3B23828C2660D00616D3A /* BookmarksView.swift */,
 				0C2886D12960AC2800D6FC16 /* DebridCloudView.swift */,
@@ -696,47 +588,23 @@
 				0CD4CAC528C980EB0046E1DC /* HistoryActionsView.swift */,
 				0C12D43C28CC332A000195BF /* HistoryButtonView.swift */,
 				0CEC8AB1299B3B57007BFE8F /* LibraryPickerView.swift */,
-			);
 			path = Library;
-			sourceTree = "<group>";
-		};
 		0CAF1C5F286F5C0D00296F86 = {
-			isa = PBXGroup;
-			children = (
 				0CA148BA288903F000DE2211 /* Ferrite */,
 				0CAF1C69286F5C0E00296F86 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
 		0CAF1C69286F5C0E00296F86 /* Products */ = {
-			isa = PBXGroup;
-			children = (
 				0CAF1C68286F5C0E00296F86 /* Ferrite.app */,
-			);
 			name = Products;
-			sourceTree = "<group>";
-		};
 		0CBC7703288DE7E90054BE44 /* DataManagement */ = {
-			isa = PBXGroup;
-			children = (
 				0C0D50DE288DF72D0035ECC8 /* Classes */,
 				0CBC7704288DE7F40054BE44 /* PersistenceController.swift */,
 				0C84F4752895BE680074B7C9 /* FerriteDB.xcdatamodeld */,
-			);
 			path = DataManagement;
-			sourceTree = "<group>";
-		};
 		0CD4030829DA01A3008D9F03 /* Info */ = {
-			isa = PBXGroup;
-			children = (
 				0CD4030929DA01B6008D9F03 /* PluginInfoMetaView.swift */,
 				0CD4030B29DA0222008D9F03 /* PluginInfoAboutView.swift */,
-			);
 			path = Info;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
-
 /* Begin PBXNativeTarget section */
 		0CAF1C67286F5C0E00296F86 /* Ferrite */ = {
 			isa = PBXNativeTarget;
@@ -746,11 +614,8 @@
 				0CAF1C65286F5C0E00296F86 /* Frameworks */,
 				0CAF1C66286F5C0E00296F86 /* Resources */,
 				0C445C60293F99360060744D /* Insert environment vars into Plist */,
-			);
 			buildRules = (
-			);
 			dependencies = (
-			);
 			name = Ferrite;
 			packageProductDependencies = (
 				0CAF1C7A286F5C8600296F86 /* SwiftSoup */,
@@ -761,13 +626,10 @@
 				0CDDDE042935235E006810B1 /* BetterSafariView */,
 				0C748ED929D9256D0049B8BE /* Yams */,
 				0C104C1B2ED97652008B890C /* SwiftUIIntrospect */,
-			);
 			productName = Torrenter;
 			productReference = 0CAF1C68286F5C0E00296F86 /* Ferrite.app */;
 			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
-
 /* Begin PBXProject section */
 		0CAF1C60286F5C0D00296F86 /* Project object */ = {
 			isa = PBXProject;
@@ -788,7 +650,6 @@
 			knownRegions = (
 				en,
 				Base,
-			);
 			mainGroup = 0CAF1C5F286F5C0D00296F86;
 			packageReferences = (
 				0CAF1C79286F5C8600296F86 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
@@ -799,57 +660,35 @@
 				0CDDDE032935235E006810B1 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 				0C748ED829D9256D0049B8BE /* XCRemoteSwiftPackageReference "Yams" */,
 				0C104C1A2ED97652008B890C /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
-			);
 			productRefGroup = 0CAF1C69286F5C0E00296F86 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0CAF1C67286F5C0E00296F86 /* Ferrite */,
-			);
-		};
 /* End PBXProject section */
-
 /* Begin PBXResourcesBuildPhase section */
 		0CAF1C66286F5C0E00296F86 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				0C794B6D289EFA2E00DD1CC8 /* LaunchScreen.storyboard in Resources */,
 				0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */,
 				0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
 /* Begin PBXShellScriptBuildPhase section */
 		0C445C60293F99360060744D /* Insert environment vars into Plist */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
 			inputFileListPaths = (
-			);
 			inputPaths = (
 				$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH,
-			);
 			name = "Insert environment vars into Plist";
 			outputFileListPaths = (
-			);
 			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# From https://stackoverflow.com/questions/26514866/how-can-i-include-the-git-commit-hash-in-xcode\n\nINFO_PLIST=\"${TARGET_BUILD_DIR}\"/\"${INFOPLIST_PATH}\"\n\n# MARK: Adds commit hash to plist\ncommitValue=$(/usr/libexec/PlistBuddy -c 'print :GitCommitHash' \"${INFO_PLIST}\" 2>/dev/null)\n\n# Check if value is empty\nif [ -z \"$commitValue\" ] \nthen\n   /usr/libexec/PlistBuddy -c \"Add :GitCommitHash string\" \"${INFO_PLIST}\"\nfi\n\n/usr/libexec/PlistBuddy -c \"Set :GitCommitHash `git rev-parse --short HEAD`\" \"${INFO_PLIST}\"\n\n# MARK: Adds the git build type to plist (examples: nightly, stable)\nbuildTypeValue=$(/usr/libexec/PlistBuddy -c 'print :IsNightly' \"${INFO_PLIST}\" 2>/dev/null)\n\n# Check if value is empty\nif [ -z \"$buildTypeValue\" ] \nthen\n   /usr/libexec/PlistBuddy -c \"Add :IsNightly bool\" \"${INFO_PLIST}\"\nfi\n\n/usr/libexec/PlistBuddy -c \"Set :IsNightly ${IS_NIGHTLY}\" \"${INFO_PLIST}\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0CAF1C64286F5C0E00296F86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				0C07C6042C1A859B00808A46 /* FormDataBody.swift in Sources */,
 				0C7ED14328D65518009E29AD /* FileManager.swift in Sources */,
 				0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */,
@@ -998,11 +837,7 @@
 				0C2886D22960AC2800D6FC16 /* DebridCloudView.swift in Sources */,
 				0CA148D7288903F000DE2211 /* LoginWebView.swift in Sources */,
 				0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
 /* Begin XCBuildConfiguration section */
 		0CAF1C74286F5C0E00296F86 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1056,7 +891,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1064,69 +899,16 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = minimal;
-			};
 			name = Debug;
-		};
 		0CAF1C75286F5C0E00296F86 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = minimal;
 				VALIDATE_PRODUCT = YES;
-			};
 			name = Release;
-		};
 		0CAF1C77286F5C0E00296F86 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1134,7 +916,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Ferrite/Preview Content\"";
 				DEVELOPMENT_TEAM = 8A74DBQ6S3;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ferrite/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ferrite;
@@ -1145,80 +926,28 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 0.7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = me.kingbri.Ferrite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_STRICT_CONCURRENCY = minimal;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.8;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		0CAF1C78286F5C0E00296F86 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
-				DEVELOPMENT_ASSET_PATHS = "\"Ferrite/Preview Content\"";
-				DEVELOPMENT_TEAM = 8A74DBQ6S3;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ferrite/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Ferrite;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.7.4;
-				PRODUCT_BUNDLE_IDENTIFIER = me.kingbri.Ferrite;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_STRICT_CONCURRENCY = minimal;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
-
 /* Begin XCConfigurationList section */
 		0CAF1C63286F5C0D00296F86 /* Build configuration list for PBXProject "Ferrite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CAF1C74286F5C0E00296F86 /* Debug */,
 				0CAF1C75286F5C0E00296F86 /* Release */,
-			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
 		0CAF1C76286F5C0E00296F86 /* Build configuration list for PBXNativeTarget "Ferrite" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
 				0CAF1C77286F5C0E00296F86 /* Debug */,
 				0CAF1C78286F5C0E00296F86 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		0C104C1A2ED97652008B890C /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1226,122 +955,62 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.2.1;
-			};
-		};
 		0C4CFC442897030D00AD9FAD /* XCRemoteSwiftPackageReference "Regex" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Regex";
-			requirement = {
 				branch = main;
 				kind = branch;
-			};
-		};
 		0C64A4B2288903680079976D /* XCRemoteSwiftPackageReference "Base32" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/norio-nomura/Base32";
-			requirement = {
 				branch = master;
-				kind = branch;
-			};
-		};
 		0C64A4B5288903880079976D /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		0C748ED829D9256D0049B8BE /* XCRemoteSwiftPackageReference "Yams" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jpsim/Yams";
-			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 5.0.5;
-			};
-		};
 		0C7506D528B1AC9A008BEE38 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		0CAF1C79286F5C8600296F86 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
-			requirement = {
-				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
-			};
-		};
 		0CDDDE032935235E006810B1 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
-			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stleamist/BetterSafariView";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		0C104C1B2ED97652008B890C /* SwiftUIIntrospect */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0C104C1A2ED97652008B890C /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
 			productName = SwiftUIIntrospect;
-		};
 		0C4CFC452897030D00AD9FAD /* Regex */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0C4CFC442897030D00AD9FAD /* XCRemoteSwiftPackageReference "Regex" */;
 			productName = Regex;
-		};
 		0C64A4B3288903680079976D /* Base32 */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0C64A4B2288903680079976D /* XCRemoteSwiftPackageReference "Base32" */;
 			productName = Base32;
-		};
 		0C64A4B6288903880079976D /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0C64A4B5288903880079976D /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
-		};
 		0C748ED929D9256D0049B8BE /* Yams */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0C748ED829D9256D0049B8BE /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
-		};
 		0C7506D628B1AC9A008BEE38 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0C7506D528B1AC9A008BEE38 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
 		0CAF1C7A286F5C8600296F86 /* SwiftSoup */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0CAF1C79286F5C8600296F86 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
-		};
 		0CDDDE042935235E006810B1 /* BetterSafariView */ = {
-			isa = XCSwiftPackageProductDependency;
 			package = 0CDDDE032935235E006810B1 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
 			productName = BetterSafariView;
-		};
 /* End XCSwiftPackageProductDependency section */
-
 /* Begin XCVersionGroup section */
 		0C84F4752895BE680074B7C9 /* FerriteDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
-			children = (
 				0C3E00D9296F5E4F00ECECB2 /* FerriteDB_v2.xcdatamodel */,
 				0C84F4762895BE680074B7C9 /* FerriteDB.xcdatamodel */,
-			);
 			currentVersion = 0C3E00D9296F5E4F00ECECB2 /* FerriteDB_v2.xcdatamodel */;
 			path = FerriteDB.xcdatamodeld;
-			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
-		};
 /* End XCVersionGroup section */
-	};
 	rootObject = 0CAF1C60286F5C0D00296F86 /* Project object */;
 }
