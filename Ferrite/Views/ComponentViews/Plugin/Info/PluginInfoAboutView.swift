@@ -21,8 +21,8 @@ struct PluginInfoAboutView<P: Plugin>: View {
                     }
                 }
 
-                if let pluginWebsite = selectedPlugin.website {
-                    Link("Website", destination: URL(string: pluginWebsite) ?? URL(string: "https://kingbri.dev/ferrite")!)
+                if let pluginWebsite = selectedPlugin.website, let url = URL(string: pluginWebsite) {
+                    Link("Website", destination: url)
                 }
             }
         }

@@ -22,7 +22,9 @@ struct SettingsDebridInfoView: View {
                         "\(debridSource.id) is a debrid service that is used for downloads and media playback. You must pay to access the service."
                     )
 
-                    Link("Website", destination: URL(string: debridSource.website) ?? URL(string: "https://kingbri.dev/ferrite")!)
+                    if let url = URL(string: debridSource.website) {
+                        Link("Website", destination: url)
+                    }
                 }
             }
 
