@@ -13,17 +13,31 @@ struct ListRowLinkView: View {
     let text: String
     let link: String
 
+    @Environment(\.openURL) var openURL
+
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        if let url = URL(string: link) {
+            Button {
+                openURL(url)
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            } label: {
+                HStack {
+                    Text(text)
+                        .foregroundColor(.primary)
 
-            Spacer()
+                    Spacer()
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+                    Image(systemName: "arrow.up.forward.app.fill")
+                        .foregroundColor(.gray)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(PressableButtonStyle())
+            .accessibilityHint("Opens in Safari")
+        } else {
+            ListRowTextView(leftText: text, rightSymbol: "exclamationmark.triangle")
+                .foregroundColor(.secondary)
         }
-        .padding(.trailing, -5)
     }
 }
 
@@ -39,19 +53,24 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            action()
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                }
             }
+            .contentShape(Rectangle())
         }
-        .padding(.trailing, -5)
+        .buttonStyle(PressableButtonStyle())
     }
 }
 

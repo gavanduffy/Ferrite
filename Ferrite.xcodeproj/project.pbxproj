@@ -166,6 +166,13 @@
 		0CF1ABDC2C0C04B2009F6C26 /* Debrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */; };
 		0CF1ABE22C0C3D2F009F6C26 /* DebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */; };
 		0CF2C0A529D1EBD400E716DD /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C0A429D1EBD400E716DD /* UIApplication.swift */; };
+		0CDE51012B5B000100000011 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51012B5B000100000001 /* DesignTokens.swift */; };
+		0CDE51022B5B000200000012 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51022B5B000200000002 /* Keyboard.swift */; };
+		0CDE51032B5B000300000013 /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51032B5B000300000003 /* LibraryHeaderView.swift */; };
+		0CDE51042B5B000400000014 /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51042B5B000400000004 /* SearchableContent.swift */; };
+		0CDE51052B5B000500000015 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51052B5B000500000005 /* SectionHeaderView.swift */; };
+		0CDE51062B5B000600000016 /* TestHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51062B5B000600000006 /* TestHostingView.swift */; };
+		0CDE51072B5B000700000017 /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE51072B5B000700000007 /* SourceCatalogButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +330,13 @@
 		0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debrid.swift; sourceTree = "<group>"; };
 		0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebridModels.swift; sourceTree = "<group>"; };
 		0CF2C0A429D1EBD400E716DD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0CDE51012B5B000100000001 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		0CDE51022B5B000200000002 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		0CDE51032B5B000300000003 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0CDE51042B5B000400000004 /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		0CDE51052B5B000500000005 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		0CDE51062B5B000600000006 /* TestHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHostingView.swift; sourceTree = "<group>"; };
+		0CDE51072B5B000700000007 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +358,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CDE51002B5B000000000000 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0CDE51012B5B000100000001 /* DesignTokens.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		0C0755C22934241F00ECA142 /* SheetViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +522,7 @@
 		0C44E2AA28D4E09B007711AE /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				0CDE51072B5B000700000007 /* SourceCatalogButtonView.swift */,
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
 			);
@@ -568,6 +591,7 @@
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
+				0CDE51002B5B000000000000 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -588,6 +612,10 @@
 		0CA148C0288903F000DE2211 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				0CDE51032B5B000300000003 /* LibraryHeaderView.swift */,
+				0CDE51042B5B000400000004 /* SearchableContent.swift */,
+				0CDE51052B5B000500000005 /* SectionHeaderView.swift */,
+				0CDE51062B5B000600000006 /* TestHostingView.swift */,
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
@@ -610,6 +638,7 @@
 		0CA148C8288903F000DE2211 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0CDE51022B5B000200000002 /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -850,6 +879,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CDE51012B5B000100000011 /* DesignTokens.swift in Sources */,
+				0CDE51022B5B000200000012 /* Keyboard.swift in Sources */,
+				0CDE51032B5B000300000013 /* LibraryHeaderView.swift in Sources */,
+				0CDE51042B5B000400000014 /* SearchableContent.swift in Sources */,
+				0CDE51052B5B000500000015 /* SectionHeaderView.swift in Sources */,
+				0CDE51062B5B000600000016 /* TestHostingView.swift in Sources */,
+				0CDE51072B5B000700000017 /* SourceCatalogButtonView.swift in Sources */,
 				0C07C6042C1A859B00808A46 /* FormDataBody.swift in Sources */,
 				0C7ED14328D65518009E29AD /* FileManager.swift in Sources */,
 				0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */,
