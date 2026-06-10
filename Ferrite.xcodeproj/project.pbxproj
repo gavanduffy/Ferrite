@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		878F7F8C18324FA696569460 /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927935AFDF4AD2AA137F65 /* SourceCatalogButtonView.swift */; };
+		5CF27AA171614944B47F405D /* TestHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59761F3AD5A40418CF7D07A /* TestHostingView.swift */; };
+		34D59D105D6E46679AFD246C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE44F4148DC47F797FCDA41 /* SectionHeaderView.swift */; };
+		710520571AE3452FAFC2BF73 /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89B59B6099421EA8F5E819 /* SearchableContent.swift */; };
+		AA84B74C75524104AB46D12F /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B114E747BE4C969CDB604B /* LibraryHeaderView.swift */; };
+		FAC2E0C6BB724206992D9095 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F03136CA2248B39562C2EE /* Keyboard.swift */; };
+		9FBEF4D69B3C4C57BC431268 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B65B7B56847E4BB3A79D0 /* DesignTokens.swift */; };
 		0C0167DC29293FA900B65783 /* RealDebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0167DB29293FA900B65783 /* RealDebridModels.swift */; };
 		0C91A1AB2E3C5C4A00C4B2C1 /* GlassTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */; };
 		0C018C1B2E3C1D1A00B8C5A1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */; };
@@ -169,6 +176,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC927935AFDF4AD2AA137F65 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
+		D59761F3AD5A40418CF7D07A /* TestHostingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHostingView.swift; sourceTree = "<group>"; };
+		ABE44F4148DC47F797FCDA41 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		1F89B59B6099421EA8F5E819 /* SearchableContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		09B114E747BE4C969CDB604B /* LibraryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		32F03136CA2248B39562C2EE /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		E40B65B7B56847E4BB3A79D0 /* DesignTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
 		0C0167DB29293FA900B65783 /* RealDebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDebridModels.swift; sourceTree = "<group>"; };
 		0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTabBarView.swift; sourceTree = "<group>"; };
 		0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -344,6 +358,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4772EADCDBA24AA4A7AFBB51 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				E40B65B7B56847E4BB3A79D0 /* DesignTokens.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		0C0755C22934241F00ECA142 /* SheetViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +522,7 @@
 		0C44E2AA28D4E09B007711AE /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				DC927935AFDF4AD2AA137F65 /* SourceCatalogButtonView.swift */,
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
 			);
@@ -568,6 +591,7 @@
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
+				4772EADCDBA24AA4A7AFBB51 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -588,6 +612,10 @@
 		0CA148C0288903F000DE2211 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				D59761F3AD5A40418CF7D07A /* TestHostingView.swift */,
+				ABE44F4148DC47F797FCDA41 /* SectionHeaderView.swift */,
+				1F89B59B6099421EA8F5E819 /* SearchableContent.swift */,
+				09B114E747BE4C969CDB604B /* LibraryHeaderView.swift */,
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
@@ -610,6 +638,7 @@
 		0CA148C8288903F000DE2211 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				32F03136CA2248B39562C2EE /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -850,6 +879,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878F7F8C18324FA696569460 /* SourceCatalogButtonView.swift in Sources */,
+				5CF27AA171614944B47F405D /* TestHostingView.swift in Sources */,
+				34D59D105D6E46679AFD246C /* SectionHeaderView.swift in Sources */,
+				710520571AE3452FAFC2BF73 /* SearchableContent.swift in Sources */,
+				AA84B74C75524104AB46D12F /* LibraryHeaderView.swift in Sources */,
+				FAC2E0C6BB724206992D9095 /* Keyboard.swift in Sources */,
+				9FBEF4D69B3C4C57BC431268 /* DesignTokens.swift in Sources */,
 				0C07C6042C1A859B00808A46 /* FormDataBody.swift in Sources */,
 				0C7ED14328D65518009E29AD /* FileManager.swift in Sources */,
 				0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */,
