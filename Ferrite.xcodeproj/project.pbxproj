@@ -323,6 +323,13 @@
 		0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debrid.swift; sourceTree = "<group>"; };
 		0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebridModels.swift; sourceTree = "<group>"; };
 		0CF2C0A429D1EBD400E716DD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0CA2D1E02B3C4E5F00A1B2C1 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
+		0CA2D1E12B3C4E5F00A1B2C1 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0CA2D1E22B3C4E5F00A1B2C1 /* TestHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHostingView.swift; sourceTree = "<group>"; };
+		0CA2D1E32B3C4E5F00A1B2C1 /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		0CA2D1E42B3C4E5F00A1B2C1 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		0CA2D1E52B3C4E5F00A1B2C1 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		0CA2D1E62B3C4E5F00A1B2C1 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +509,7 @@
 			children = (
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
+				0CA2D1E02B3C4E5F00A1B2C1 /* SourceCatalogButtonView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -565,11 +573,20 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0CA2D1E72B3C4E5F00A1B2C1 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0CA2D1E42B3C4E5F00A1B2C1 /* DesignTokens.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
+				0CA2D1E72B3C4E5F00A1B2C1 /* Design */,
 				0CA148F12889066000DE2211 /* API */,
 				0C0D50E3288DFE6E0035ECC8 /* Models */,
 				0CA148EF2889061600DE2211 /* ViewModels */,
@@ -589,6 +606,10 @@
 			isa = PBXGroup;
 			children = (
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
+				0CA2D1E12B3C4E5F00A1B2C1 /* LibraryHeaderView.swift */,
+				0CA2D1E22B3C4E5F00A1B2C1 /* TestHostingView.swift */,
+				0CA2D1E32B3C4E5F00A1B2C1 /* SearchableContent.swift */,
+				0CA2D1E52B3C4E5F00A1B2C1 /* SectionHeaderView.swift */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
 				0C32FB562890D1F2002BD219 /* ListRowViews.swift */,
@@ -626,6 +647,7 @@
 				0C7C128528DAA3CD00381CD1 /* URL.swift */,
 				0C50B7CF299DF63C00A9FA3C /* UIDevice.swift */,
 				0CF2C0A429D1EBD400E716DD /* UIApplication.swift */,
+				0CA2D1E62B3C4E5F00A1B2C1 /* Keyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -998,6 +1020,13 @@
 				0C2886D22960AC2800D6FC16 /* DebridCloudView.swift in Sources */,
 				0CA148D7288903F000DE2211 /* LoginWebView.swift in Sources */,
 				0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */,
+				0CA2D1E82B3C4E5F00A1B2C1 /* SourceCatalogButtonView.swift in Sources */,
+				0CA2D1E92B3C4E5F00A1B2C1 /* LibraryHeaderView.swift in Sources */,
+				0CA2D1EA2B3C4E5F00A1B2C1 /* TestHostingView.swift in Sources */,
+				0CA2D1EB2B3C4E5F00A1B2C1 /* SearchableContent.swift in Sources */,
+				0CA2D1EC2B3C4E5F00A1B2C1 /* DesignTokens.swift in Sources */,
+				0CA2D1ED2B3C4E5F00A1B2C1 /* SectionHeaderView.swift in Sources */,
+				0CA2D1EE2B3C4E5F00A1B2C1 /* Keyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
