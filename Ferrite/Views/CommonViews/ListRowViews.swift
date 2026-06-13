@@ -10,20 +10,34 @@
 import SwiftUI
 
 struct ListRowLinkView: View {
+    @Environment(\.openURL) var openURL
+
     let text: String
     let link: String
 
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        Button {
+            if let url = URL(string: link) {
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+                openURL(url)
+            }
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+                Image(systemName: "arrow.up.forward.app.fill")
+                    .foregroundColor(.gray)
+            }
+            .contentShape(Rectangle())
         }
+        .buttonStyle(PressableButtonStyle())
         .padding(.trailing, -5)
+        .accessibilityLabel(text)
+        .accessibilityHint("Opens in browser")
     }
 }
 
@@ -39,19 +53,27 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            action()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                }
             }
+            .contentShape(Rectangle())
         }
+        .buttonStyle(PressableButtonStyle())
         .padding(.trailing, -5)
+        .accessibilityLabel(text)
     }
 }
 
