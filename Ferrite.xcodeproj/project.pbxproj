@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		SENT00000000000000000003 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = SENT00000000000000000002 /* DesignTokens.swift */; };
+		SENT00000000000000000005 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SENT00000000000000000004 /* Keyboard.swift */; };
+		SENT00000000000000000007 /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SENT00000000000000000006 /* LibraryHeaderView.swift */; };
+		SENT00000000000000000009 /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = SENT00000000000000000008 /* SearchableContent.swift */; };
+		SENT00000000000000000011 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SENT00000000000000000010 /* SectionHeaderView.swift */; };
+		SENT00000000000000000013 /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SENT00000000000000000012 /* SourceCatalogButtonView.swift */; };
 		0C0167DC29293FA900B65783 /* RealDebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0167DB29293FA900B65783 /* RealDebridModels.swift */; };
 		0C91A1AB2E3C5C4A00C4B2C1 /* GlassTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */; };
 		0C018C1B2E3C1D1A00B8C5A1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */; };
@@ -118,7 +124,6 @@
 		0CA148D8288903F000DE2211 /* ActionChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148BD288903F000DE2211 /* ActionChoiceView.swift */; };
 		0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA148C2288903F000DE2211 /* Assets.xcassets */; };
 		0CA148DD288903F000DE2211 /* ScrapingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */; };
-		0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA148C6288903F000DE2211 /* Preview Assets.xcassets */; };
 		0CA148E0288903F000DE2211 /* FerriteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C7288903F000DE2211 /* FerriteApp.swift */; };
 		0CA148E1288903F000DE2211 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148C9288903F000DE2211 /* Collection.swift */; };
 		0CA148E2288903F000DE2211 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA148CA288903F000DE2211 /* Data.swift */; };
@@ -169,6 +174,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		SENT00000000000000000002 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		SENT00000000000000000004 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		SENT00000000000000000006 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		SENT00000000000000000008 /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		SENT00000000000000000010 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		SENT00000000000000000012 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
 		0C0167DB29293FA900B65783 /* RealDebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDebridModels.swift; sourceTree = "<group>"; };
 		0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTabBarView.swift; sourceTree = "<group>"; };
 		0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -275,7 +286,6 @@
 		0CA148BD288903F000DE2211 /* ActionChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionChoiceView.swift; sourceTree = "<group>"; };
 		0CA148C2288903F000DE2211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CA148C3288903F000DE2211 /* ScrapingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrapingViewModel.swift; sourceTree = "<group>"; };
-		0CA148C6288903F000DE2211 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0CA148C7288903F000DE2211 /* FerriteApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FerriteApp.swift; sourceTree = "<group>"; };
 		0CA148C9288903F000DE2211 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		0CA148CA288903F000DE2211 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -344,6 +354,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		SENT00000000000000000001 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				SENT00000000000000000002 /* DesignTokens.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		0C0755C22934241F00ECA142 /* SheetViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +518,7 @@
 		0C44E2AA28D4E09B007711AE /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				SENT00000000000000000012 /* SourceCatalogButtonView.swift */,
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
 			);
@@ -568,6 +587,7 @@
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
+				SENT00000000000000000001 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -588,6 +608,9 @@
 		0CA148C0288903F000DE2211 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				SENT00000000000000000010 /* SectionHeaderView.swift */,
+				SENT00000000000000000008 /* SearchableContent.swift */,
+				SENT00000000000000000006 /* LibraryHeaderView.swift */,
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
@@ -602,7 +625,7 @@
 		0CA148C5288903F000DE2211 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0CA148C6288903F000DE2211 /* Preview Assets.xcassets */,
+
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -610,6 +633,7 @@
 		0CA148C8288903F000DE2211 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				SENT00000000000000000004 /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -815,7 +839,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C794B6D289EFA2E00DD1CC8 /* LaunchScreen.storyboard in Resources */,
-				0CA148DF288903F000DE2211 /* Preview Assets.xcassets in Resources */,
 				0CA148DC288903F000DE2211 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -850,6 +873,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				SENT00000000000000000003 /* DesignTokens.swift in Sources */,
+				SENT00000000000000000005 /* Keyboard.swift in Sources */,
+				SENT00000000000000000007 /* LibraryHeaderView.swift in Sources */,
+				SENT00000000000000000009 /* SearchableContent.swift in Sources */,
+				SENT00000000000000000011 /* SectionHeaderView.swift in Sources */,
+				SENT00000000000000000013 /* SourceCatalogButtonView.swift in Sources */,
 				0C07C6042C1A859B00808A46 /* FormDataBody.swift in Sources */,
 				0C7ED14328D65518009E29AD /* FileManager.swift in Sources */,
 				0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */,
