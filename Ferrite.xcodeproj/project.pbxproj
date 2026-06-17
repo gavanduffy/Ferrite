@@ -166,6 +166,12 @@
 		0CF1ABDC2C0C04B2009F6C26 /* Debrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */; };
 		0CF1ABE22C0C3D2F009F6C26 /* DebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */; };
 		0CF2C0A529D1EBD400E716DD /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C0A429D1EBD400E716DD /* UIApplication.swift */; };
+		0CB57C8BFC4BA7E213A597D8 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C786C640BD5ED1965074D4C /* DesignTokens.swift */; };
+		0C0BD3130243FCFF2B0C03E6 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4D1D25A2AB5EC8C5418F7F /* Keyboard.swift */; };
+		0CC86022A52D350C36B9B2FE /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA01EE5A782AC973D3BCED1 /* LibraryHeaderView.swift */; };
+		0C5C52B76EC4C0FE58821068 /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56D5E2B1ABC91B14865CCA /* SearchableContent.swift */; };
+		0C09A51052099DD6C275D0B6 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C64C176E4753CB2D1826CEE /* SectionHeaderView.swift */; };
+		0C4945E0A82F3B322C52B03E /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F5B52D3698606573A3813 /* SourceCatalogButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +329,12 @@
 		0CF1ABDB2C0C04B2009F6C26 /* Debrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debrid.swift; sourceTree = "<group>"; };
 		0CF1ABE12C0C3D2F009F6C26 /* DebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebridModels.swift; sourceTree = "<group>"; };
 		0CF2C0A429D1EBD400E716DD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0C786C640BD5ED1965074D4C /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		0C4D1D25A2AB5EC8C5418F7F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		0CA01EE5A782AC973D3BCED1 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0C56D5E2B1ABC91B14865CCA /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		0C64C176E4753CB2D1826CEE /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		0C1F5B52D3698606573A3813 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +512,7 @@
 		0C44E2AA28D4E09B007711AE /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				0C1F5B52D3698606573A3813 /* SourceCatalogButtonView.swift */,
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
 			);
@@ -568,6 +581,7 @@
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
+				0C1E4EF54FF95BA93B9BFB04 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -588,6 +602,9 @@
 		0CA148C0288903F000DE2211 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				0C64C176E4753CB2D1826CEE /* SectionHeaderView.swift */,
+				0C56D5E2B1ABC91B14865CCA /* SearchableContent.swift */,
+				0CA01EE5A782AC973D3BCED1 /* LibraryHeaderView.swift */,
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
@@ -610,6 +627,7 @@
 		0CA148C8288903F000DE2211 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0C4D1D25A2AB5EC8C5418F7F /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -670,6 +688,14 @@
 				0CC2CA7329E24F63000A8585 /* ExpandedSearchable.swift */,
 			);
 			path = RepresentableViews;
+			sourceTree = "<group>";
+		};
+		0C1E4EF54FF95BA93B9BFB04 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0C786C640BD5ED1965074D4C /* DesignTokens.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		0CA148F12889066000DE2211 /* API */ = {
@@ -850,6 +876,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4945E0A82F3B322C52B03E /* SourceCatalogButtonView.swift in Sources */,
+				0C09A51052099DD6C275D0B6 /* SectionHeaderView.swift in Sources */,
+				0C5C52B76EC4C0FE58821068 /* SearchableContent.swift in Sources */,
+				0CC86022A52D350C36B9B2FE /* LibraryHeaderView.swift in Sources */,
+				0C0BD3130243FCFF2B0C03E6 /* Keyboard.swift in Sources */,
+				0CB57C8BFC4BA7E213A597D8 /* DesignTokens.swift in Sources */,
 				0C07C6042C1A859B00808A46 /* FormDataBody.swift in Sources */,
 				0C7ED14328D65518009E29AD /* FileManager.swift in Sources */,
 				0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */,
