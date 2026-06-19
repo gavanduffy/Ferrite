@@ -9,7 +9,7 @@ import Foundation
 
 class Github {
     func fetchLatestRelease() async throws -> Release? {
-        let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases/latest")!
+        guard let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases/latest") else { return nil }
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
@@ -18,7 +18,7 @@ class Github {
     }
 
     func fetchReleases() async throws -> [Release]? {
-        let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases")!
+        guard let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases") else { return nil }
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
