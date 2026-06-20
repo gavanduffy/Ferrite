@@ -8,22 +8,36 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ListRowLinkView: View {
     let text: String
     let link: String
 
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
 
-            Spacer()
+            if let url = URL(string: link) {
+                UIApplication.shared.open(url)
+            }
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+                Spacer()
+
+                Image(systemName: "arrow.up.forward.app.fill")
+                    .foregroundColor(.secondary)
+            }
+            .padding(.trailing, -5)
+            .contentShape(Rectangle())
         }
-        .padding(.trailing, -5)
+        .applyPressableButtonStyle()
+        .accessibilityLabel(text)
+        .accessibilityHint("Opens the website")
     }
 }
 
@@ -39,19 +53,27 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            action()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.secondary)
+                }
             }
+            .padding(.trailing, -5)
+            .contentShape(Rectangle())
         }
-        .padding(.trailing, -5)
+        .applyPressableButtonStyle()
+        .accessibilityHint("Performs an action")
     }
 }
 
