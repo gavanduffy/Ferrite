@@ -7,9 +7,15 @@
 
 import Foundation
 
+enum GithubError: Error {
+    case invalidUrl
+}
+
 class Github {
     func fetchLatestRelease() async throws -> Release? {
-        let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases/latest")!
+        guard let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases/latest") else {
+            throw GithubError.invalidUrl
+        }
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
@@ -18,7 +24,9 @@ class Github {
     }
 
     func fetchReleases() async throws -> [Release]? {
-        let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases")!
+        guard let url = URL(string: "https://api.github.com/repos/Ferrite-iOS/Ferrite/releases") else {
+            throw GithubError.invalidUrl
+        }
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
