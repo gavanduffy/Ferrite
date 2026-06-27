@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C794B70289DACF100DD1CCA /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C794B6F289DACF100DD1CC9 /* SourceCatalogButtonView.swift */; };
+		0CA3B24528C2AA5600616D42 /* TestHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3B24428C2AA5600616D41 /* TestHostingView.swift */; };
+		0CA3B24328C2AA5600616D40 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3B24228C2AA5600616D3F /* SectionHeaderView.swift */; };
+		0CA3B24128C2AA5600616D3E /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3B24028C2AA5600616D3D /* SearchableContent.swift */; };
+		0CA3B23F28C2AA5600616D3C /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3B23E28C2AA5600616D3B /* LibraryHeaderView.swift */; };
+		0C70E40828C40C4E00A5C72F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C70E40728C40C4E00A5C72E /* Keyboard.swift */; };
+		0CC667AC39723DFAD7FE9522 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC667AB39723DFAD7FE9521 /* DesignTokens.swift */; };
 		0C0167DC29293FA900B65783 /* RealDebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0167DB29293FA900B65783 /* RealDebridModels.swift */; };
 		0C91A1AB2E3C5C4A00C4B2C1 /* GlassTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */; };
 		0C018C1B2E3C1D1A00B8C5A1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */; };
@@ -169,6 +176,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C794B6F289DACF100DD1CC9 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
+		0CA3B24428C2AA5600616D41 /* TestHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHostingView.swift; sourceTree = "<group>"; };
+		0CA3B24228C2AA5600616D3F /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		0CA3B24028C2AA5600616D3D /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		0CA3B23E28C2AA5600616D3B /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0C70E40728C40C4E00A5C72E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		0CC667AB39723DFAD7FE9521 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
 		0C0167DB29293FA900B65783 /* RealDebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDebridModels.swift; sourceTree = "<group>"; };
 		0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTabBarView.swift; sourceTree = "<group>"; };
 		0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -344,6 +358,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CC667AA39723DFAD7FE9520 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0CC667AB39723DFAD7FE9521 /* DesignTokens.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		0C0755C22934241F00ECA142 /* SheetViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +522,7 @@
 		0C44E2AA28D4E09B007711AE /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				0C794B6F289DACF100DD1CC9 /* SourceCatalogButtonView.swift */,
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
 			);
@@ -568,6 +591,7 @@
 		0CA148BA288903F000DE2211 /* Ferrite */ = {
 			isa = PBXGroup;
 			children = (
+				0CC667AA39723DFAD7FE9520 /* Design */,
 				0CC6E4D428A45BA000AF2BCC /* Info.plist */,
 				0CBC7703288DE7E90054BE44 /* DataManagement */,
 				0CA148F12889066000DE2211 /* API */,
@@ -588,6 +612,10 @@
 		0CA148C0288903F000DE2211 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				0CA3B24428C2AA5600616D41 /* TestHostingView.swift */,
+				0CA3B24228C2AA5600616D3F /* SectionHeaderView.swift */,
+				0CA3B24028C2AA5600616D3D /* SearchableContent.swift */,
+				0CA3B23E28C2AA5600616D3B /* LibraryHeaderView.swift */,
 				0C44E2A928D4DFC4007711AE /* Modifiers */,
 				0CDCB91728C662640098B513 /* EmptyInstructionView.swift */,
 				0CA3FB1F28B91D9500FA10A8 /* IndeterminateProgressView.swift */,
@@ -610,6 +638,7 @@
 		0CA148C8288903F000DE2211 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0C70E40728C40C4E00A5C72E /* Keyboard.swift */,
 				0CD72E16293D9928001A7EA4 /* Array.swift */,
 				0C445C61293F9A0B0060744D /* Bundle.swift */,
 				0CA148C9288903F000DE2211 /* Collection.swift */,
@@ -850,6 +879,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C794B70289DACF100DD1CCA /* SourceCatalogButtonView.swift in Sources */,
+				0CA3B24528C2AA5600616D42 /* TestHostingView.swift in Sources */,
+				0CA3B24328C2AA5600616D40 /* SectionHeaderView.swift in Sources */,
+				0CA3B24128C2AA5600616D3E /* SearchableContent.swift in Sources */,
+				0CA3B23F28C2AA5600616D3C /* LibraryHeaderView.swift in Sources */,
+				0C70E40828C40C4E00A5C72F /* Keyboard.swift in Sources */,
+				0CC667AC39723DFAD7FE9522 /* DesignTokens.swift in Sources */,
 				0C07C6042C1A859B00808A46 /* FormDataBody.swift in Sources */,
 				0C7ED14328D65518009E29AD /* FileManager.swift in Sources */,
 				0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */,
