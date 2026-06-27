@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SearchResultButtonView: View {
     let backgroundContext = PersistenceController.shared.backgroundContext
@@ -22,6 +23,9 @@ struct SearchResultButtonView: View {
 
     var body: some View {
         Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+
             if debridManager.currentDebridTask == nil {
                 navModel.selectedMagnet = result.magnet
                 navModel.selectedTitle = result.title ?? ""

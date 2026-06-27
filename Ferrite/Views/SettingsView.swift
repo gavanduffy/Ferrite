@@ -117,6 +117,7 @@ struct SettingsView: View {
                                 .fixedSize()
                                 .keyboardType(.numberPad)
                                 .focused($focusedField, equals: Field.requestTimeout)
+                                .accessibilityLabel("Search timeout in seconds")
                         }
                     }
                 }
