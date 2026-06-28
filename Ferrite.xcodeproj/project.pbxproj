@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0C0167DC29293FA900B65783 /* RealDebridModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0167DB29293FA900B65783 /* RealDebridModels.swift */; };
+		0C11A885434DE14E5C6B76CC /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C65801FD4D6DF931787108C /* DesignTokens.swift */; };
+		0C31F7D80781CE741331FC50 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0016EFE9B875385609FB1B /* Keyboard.swift */; };
+		0C6FEA63C8A45210C2429BC6 /* LibraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C290A9AF0222804B1DDF521 /* LibraryHeaderView.swift */; };
+		0C0C388AAC74D62F39EC5BDE /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C901A05D8FA3A217244C919 /* SearchableContent.swift */; };
+		0C3C30186A8F997633153F94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1949872C859EA5950471A2 /* SectionHeaderView.swift */; };
+		0C102F0E3C7488C15BABB5FE /* TestHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C26475C26D89A52008D1CA9 /* TestHostingView.swift */; };
+		0C5A2F2EB77E88B2F46531C6 /* SourceCatalogButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC3D3D4BB83739206A9A16 /* SourceCatalogButtonView.swift */; };
 		0C91A1AB2E3C5C4A00C4B2C1 /* GlassTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */; };
 		0C018C1B2E3C1D1A00B8C5A1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */; };
 		0C03EB71296F619900162E9A /* PluginList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C03EB6F296F619900162E9A /* PluginList+CoreDataClass.swift */; };
@@ -170,6 +177,13 @@
 
 /* Begin PBXFileReference section */
 		0C0167DB29293FA900B65783 /* RealDebridModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDebridModels.swift; sourceTree = "<group>"; };
+		0C65801FD4D6DF931787108C /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		0C0016EFE9B875385609FB1B /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		0C290A9AF0222804B1DDF521 /* LibraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHeaderView.swift; sourceTree = "<group>"; };
+		0C901A05D8FA3A217244C919 /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		0C1949872C859EA5950471A2 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		0C26475C26D89A52008D1CA9 /* TestHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHostingView.swift; sourceTree = "<group>"; };
+		0CBC3D3D4BB83739206A9A16 /* SourceCatalogButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCatalogButtonView.swift; sourceTree = "<group>"; };
 		0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTabBarView.swift; sourceTree = "<group>"; };
 		0C018C1A2E3C1D1A00B8C5A1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		0C03EB6F296F619900162E9A /* PluginList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PluginList+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -502,8 +516,17 @@
 			children = (
 				0C794B68289DACC800DD1CC8 /* InstalledPluginButtonView.swift */,
 				0C794B6A289DACF100DD1CC8 /* PluginCatalogButtonView.swift */,
+				0CBC3D3D4BB83739206A9A16 /* SourceCatalogButtonView.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		0C0C300B22C7488C15BABB5FE /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0C65801FD4D6DF931787108C /* DesignTokens.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		0C44E2AB28D4E126007711AE /* SearchResult */ = {
@@ -576,6 +599,7 @@
 				0CA148EE2889061200DE2211 /* Views */,
 				0C44E2A628D4DDC6007711AE /* Utils */,
 				0C5005552992B9C20064606A /* Protocols */,
+				0C0C300B22C7488C15BABB5FE /* Design */,
 				0CA148C8288903F000DE2211 /* Extensions */,
 				0CA148C5288903F000DE2211 /* Preview Content */,
 				0CA148C7288903F000DE2211 /* FerriteApp.swift */,
@@ -595,6 +619,10 @@
 				0C91A1AA2E3C5C4A00C4B2C1 /* GlassTabBarView.swift */,
 				0C2D9652299316CC00A504B6 /* Tag.swift */,
 				0C6771FB29B3E0DB005D38D2 /* HybridSecureField.swift */,
+				0C290A9AF0222804B1DDF521 /* LibraryHeaderView.swift */,
+				0C901A05D8FA3A217244C919 /* SearchableContent.swift */,
+				0C1949872C859EA5950471A2 /* SectionHeaderView.swift */,
+				0C26475C26D89A52008D1CA9 /* TestHostingView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -616,6 +644,7 @@
 				0C7075E329D374C50093DB2D /* Color.swift */,
 				0CA148CA288903F000DE2211 /* Data.swift */,
 				0CA429F728C5098D000D0610 /* DateFormatter.swift */,
+				0C0016EFE9B875385609FB1B /* Keyboard.swift */,
 				0C70E40528C40C4E00A5C72D /* NotificationCenter.swift */,
 				0C78041C28BFB3EA001E8CA3 /* String.swift */,
 				0CA148CB288903F000DE2211 /* Task.swift */,
@@ -923,6 +952,13 @@
 				0C68135028BC1A2D00FAD890 /* GithubWrapper.swift in Sources */,
 				0CA148E3288903F000DE2211 /* Task.swift in Sources */,
 				0CA148E7288903F000DE2211 /* LoggingManager.swift in Sources */,
+				0C11A885434DE14E5C6B76CC /* DesignTokens.swift in Sources */,
+				0C31F7D80781CE741331FC50 /* Keyboard.swift in Sources */,
+				0C6FEA63C8A45210C2429BC6 /* LibraryHeaderView.swift in Sources */,
+				0C0C388AAC74D62F39EC5BDE /* SearchableContent.swift in Sources */,
+				0C3C30186A8F997633153F94 /* SectionHeaderView.swift in Sources */,
+				0C102F0E3C7488C15BABB5FE /* TestHostingView.swift in Sources */,
+				0C5A2F2EB77E88B2F46531C6 /* SourceCatalogButtonView.swift in Sources */,
 				0C1A3E5629C9488C00DA9730 /* CodableWrapper.swift in Sources */,
 				0C1234567890ABCDEF12345A /* UnchainedAdapter.swift in Sources */,
 				0C6771FC29B3E0DB005D38D2 /* HybridSecureField.swift in Sources */,
