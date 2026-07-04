@@ -8,22 +8,39 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ListRowLinkView: View {
+    @Environment(\.openURL) var openURL
+
     let text: String
     let link: String
 
     var body: some View {
-        HStack {
-            Link(text, destination: URL(string: link)!)
-                .foregroundColor(.primary)
+        Button {
+            guard let url = URL(string: link) else { return }
 
-            Spacer()
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
 
-            Image(systemName: "arrow.up.forward.app.fill")
-                .foregroundColor(.gray)
+            openURL(url)
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
+
+                Spacer()
+
+                Image(systemName: "arrow.up.forward.app.fill")
+                    .foregroundColor(.gray)
+                    .accessibilityHidden(true)
+            }
+            .contentShape(Rectangle())
+            .padding(.trailing, -5)
         }
-        .padding(.trailing, -5)
+        .applyPressableButtonStyle()
+        .accessibilityLabel(text)
+        .accessibilityHint("Opens in browser")
     }
 }
 
@@ -39,19 +56,27 @@ struct ListRowButtonView: View {
     }
 
     var body: some View {
-        HStack {
-            Button(text) {
-                action()
-            }
+        Button {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            action()
+        } label: {
+            HStack {
+                Text(text)
+                    .foregroundColor(.primary)
 
-            Spacer()
+                Spacer()
 
-            if let imageName = systemImage {
-                Image(systemName: imageName)
-                    .foregroundColor(.gray)
+                if let imageName = systemImage {
+                    Image(systemName: imageName)
+                        .foregroundColor(.gray)
+                        .accessibilityHidden(true)
+                }
             }
+            .contentShape(Rectangle())
+            .padding(.trailing, -5)
         }
-        .padding(.trailing, -5)
+        .applyPressableButtonStyle()
     }
 }
 
@@ -70,8 +95,10 @@ struct ListRowTextView: View {
                 Text(rightText)
             } else if let rightSymbol {
                 Image(systemName: rightSymbol)
+                    .accessibilityHidden(true)
             }
         }
         .padding(.trailing, -5)
+        .accessibilityElement(children: .combine)
     }
 }
